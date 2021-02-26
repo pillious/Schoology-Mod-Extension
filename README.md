@@ -1,4 +1,4 @@
-# Schoology-Mod-Extension
+### Schoology Modifier
 Move the "overdue" section out of the way using a whole 4 lines of css.
 
 ```
