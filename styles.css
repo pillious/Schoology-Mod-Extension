@@ -1,0 +1,4 @@
+#right-column-inner {
+    display: flex;
+    flex-direction: column-reverse;
+}
