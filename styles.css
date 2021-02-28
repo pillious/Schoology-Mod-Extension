@@ -1,0 +1,276 @@
+/* Sections
+Navbar
+Sidebar
+Footer
+Homepage
+Course
+*/
+
+* {
+    /* Color by elevation */
+    --E0: #121212;
+    --E1: #1d1d1d;
+    --E2: #212121;
+    --E3: #242424;
+    --E4: #272727;
+    --E5: #2c2c2c;
+    --E10: #383838;
+
+    /* 02dac5, 84dfe2, BB86FC, 4479B3 */
+    /* Try this: #84C9Fb */
+    --primary: #84dfe2;
+    --secondary: #f50057;
+
+    --text-high: rgba(255, 255, 255, 0.87);
+    --text-medium: rgba(255, 255, 255, 0.60);
+    --text-disabled: rgba(255, 255, 255, 0.38);
+
+    color: var(--text-high) !important;
+}
+
+body {
+    background-color: var(--E0) !important;
+    color: var(--text-high) !important;
+}
+
+a {
+    color: var(--primary) !important;
+}
+
+/* Navbar */
+header,
+nav,
+nav button,
+nav a {
+    background-color: var(--E3) !important;
+    color: var(--text-high) !important;
+}
+
+nav ul li div,
+*[role="menu"] {
+    background-color: var(--E3) !important;
+    border-color: var(--primary) !important;
+}
+
+article {
+    border-color: var(--text-disabled) !important;
+}
+
+article a {
+    outline-color: var(--text-medium) !important;
+}
+
+article a div {
+    background-color: var(--E4) !important;
+}
+
+
+input[placeholder="Search"] {
+    background-color: var(--E3) !important;
+}
+
+/* notification bell dropdown menu*/
+.util-box-shadow-dropdown-2Bl9b button[aria-selected="true"],
+.util-box-shadow-dropdown-2Bl9b a[href="/home/notifications?from_popup&"] {
+    background-color: var(--secondary) !important;
+}
+
+.util-box-shadow-dropdown-2Bl9b a {
+    color: var(--primary) !important
+}
+
+a[href="/messages"] {
+    background-color: var(--secondary) !important;
+    color: var(--text-high) !important;
+}
+/* Navbar end */
+
+/* Sidebar */
+#right-column-inner {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#right-column-inner #overdue-submissions {
+    background-color: var(--E2) !important;
+}
+
+#right-column-inner .upcoming-events {
+    background-color: var(--E3) !important;
+}
+
+table,
+tr,
+td,
+th {
+    border-color: var(--text-disabled) !important;
+}
+
+/* Sidebar end*/
+
+/* Footer */
+footer {
+    background-color: var(--E3) !important; 
+}
+
+/* #site-navigation-footer div {
+    background-color: var(--E3) !important;
+} */
+
+/* Footer end */
+
+/* Homepage content */
+#center #main {
+    background-color: var(--E1) !important;
+}
+
+ol {
+    border-bottom-color: var(--text-high) !important;
+}
+
+ol li.active {
+    border-bottom-color: var(--text-high) !important;
+}
+
+#main-inner #home-feed-container {
+    background-color: var(--E2) !important;
+}
+
+ul li,
+#smart-box {
+    border-color: var(--text-disabled) !important;
+}
+
+#edge-filters-menu {
+    background-color: var(--E2) !important;
+}
+
+#edge-filters-menu .active {
+    background-position: 0 -257px !important;
+}
+
+.edge-footer,
+.edge-footer span {
+    color: var(--text-medium) !important;
+}
+
+.update-body * {
+    background-color: var(--E2) !important;
+}
+
+div.feed-comments {
+    background-color: var(--E3) !important;
+}
+
+.comment-footer span {
+    color: var(--text-medium) !important;
+}
+
+/* Homepage content end */
+
+/* Course content */
+#main-content-wrapper {
+    background-color: var(--E1) !important;
+    border-color: var(--text-disabled) !important;
+}
+
+#left-nav a {
+    background-color: var(--E0) !important;
+}
+
+#left-nav a.active {
+    background-color: var(--E1) !important;
+}
+
+body#tinymce {
+    background-color: var(--E2) !important;
+    color: var(--text-high) !important;
+}
+
+div.materials-top,
+.date-header h4 {
+    border-color: var(--text-disabled) !important;
+}
+
+#course-profile-materials {
+    background-color: var(--E2) !important;
+}
+
+#course-materials-dropdown,
+#course-materials-dropdown .item-list ul li a {
+    background-color: var(--E2) !important;
+}
+
+.materials-dropdown-arrow {
+    background: #fff url(/sites/all/themes/schoology_theme/images/gray-btn-bg.gif?60391c9360bd4989) repeat-x 0 1px;
+    border: 1px solid;
+    border-color: #999 #888 #888;
+    margin-top: -3px;
+}
+
+#course-materials-dropdown .item-list ul li a:hover {
+    background-color: var(--E5) !important;
+}
+
+#edge-filters {
+    background-color: var(--E1) !important;
+}
+
+#edge-filters-btn {
+    color: var(--text-high) !important;
+    opacity: 1 !important;
+}
+
+#center-top {
+    background-color: var(--E1) !important;
+    border-color: var(--text-disabled) !important;
+}
+
+div.materials-filter-wrapper,
+a#edit-course-switcher-select-nid-button,
+a.notification-settings {
+    background: var(--E5) !important
+}
+
+div.content-top-upper {
+    background-color: var(--E1) !important;
+}
+
+div.navigator-buttons a {
+    background: var(--E5) !important;
+}
+
+.sgy-card,
+.sgy-card .sgy-card-context {
+    background-color: var(--E2) !important;
+    border-color: var(--text-disabled) !important;
+}
+
+#updates-count {
+    background-color: var(--secondary) !important;
+}
+
+textarea {
+    background-color: var(--E5) !important;
+}
+
+input[type="submit"] {
+    background-color: var(--secondary) !important;
+}
+/* Course content end */
+
+/* Resources */
+#library-wrapper,
+#library-wrapper div {
+    background-color: var(--E1) !important;
+    border-color: var(--text-disabled) !important;
+}
+
+.library-collection a[href="/resources"] {
+    background-color: var(--E2) !important;
+}
+/* Resources end */
+
+/* Grades */
+
+/* Grades end */
