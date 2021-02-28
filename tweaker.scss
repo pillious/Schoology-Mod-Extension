@@ -15,6 +15,7 @@
 // Settings
 // Profile
 // Popups
+// Submission textboxes
 
 $E0: #121212;
 $E1: #1d1d1d;
@@ -84,8 +85,13 @@ body {
 
     input,
     select,
-    option {
+    option,
+    table, td, th {
         background-color: $E2 !important;
+    }
+
+    input[type="submit"] {
+        background-color: $secondary !important;
     }
 
     fieldset {
@@ -484,10 +490,26 @@ body {
                     border-color: $text-disabled !important;
                 }
             }
+
+            .roster-top {
+                background: none !important;
+            }
+
+            .enrollment-view-nav {
+                background-color: $E1 !important;
+            }
+
+            .filter-btn:hover {
+                background-color: $E9 !important;
+            }
         }
 
         .collection-row-empty td {
             background-color: $E2 !important;
+        }
+
+        .search-results {
+            background-color: $E2 !important;       
         }
     }
 }
@@ -546,6 +568,28 @@ body {
         .gradebook-course {
             background-color: $E1 !important;
             border-color: $text-disabled !important;
+        }
+    }
+}
+
+.s-slider {
+    th, td {
+        border-color: $text-disabled !important;
+    }
+
+    .right-column {
+        background: none !important;
+        background-color: $E5 !important;
+    }
+
+    .bottom {
+        background: none !important;
+        background-color: $E5 !important;
+    }
+
+    td.selected {
+        .input-bottom {
+            color: #000 !important;
         }
     }
 }
@@ -679,6 +723,21 @@ div.select2-drop {
             background-color: $secondary !important;
             border-color: $text-disabled !important;
         }
+    }
+}
+
+.course-materials-left-menu {
+    background-color: $E1 !important;
+}
+
+.messages {
+    .message-text {
+        background-color: transparent !important;
+        color: #000 !important;
+    }
+
+    .status .messages-close-btn {
+        color: #9DD684 !important;
     }
 }
 
@@ -824,4 +883,42 @@ div.select2-drop {
 .popover-content {
     background-color: $E3 !important;
 }
+
+div[aria-labelledby="modal-heading"] {
+    background-color: $E4 !important;
+
+    .RecordTypeCard-card-wrapper-2AQUq {
+        background-color: $E6 !important;
+    }
+
+    .RecordTypeCard-card-AjKIG {
+        background-color: $E6 !important;
+    }
+
+    button {
+        background-color: $secondary !important;
+    }
+}
 // End Popups
+
+// Submission textboxes
+.mceToolbar {
+    background-color: $E6 !important;
+
+    *:not(.mceColorPreview) {
+        background-color: $E6 !important; 
+    }
+
+    .mceMenu {
+        background-color: $E2 !important;
+    }
+
+    td a.mceButtonActive {
+        color: $primary !important;
+    }
+}
+
+.mceMenuItem a:hover {
+    background-color: $E9 !important;
+}
+// End Submission textboxes
