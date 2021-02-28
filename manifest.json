@@ -1,13 +1,13 @@
 {
-    "manifest_version": 2,
-   
-    "name": "Schoology Tweaker",
-    "version": "1",
-    "description": "Schoology Dark Mode! move 'Overdue' section out of the way.",
-   
-    "content_scripts": [{
-      "css": ["tweaker.css"],
-      "matches": ["https://schoology.newton.k12.ma.us/*"]
-    }]
-   
+  "manifest_version": 2,
+ 
+  "name": "Schoology Tweaker",
+  "version": "1",
+  "description": "Schoology Dark Mode! move 'Overdue' section out of the way.",
+ 
+  "content_scripts": [{
+    "css": ["tweaker.css"],
+    "matches": ["https://schoology.newton.k12.ma.us/*"]
+  }]
+ 
 }
