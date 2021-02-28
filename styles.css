@@ -1,4 +1,72 @@
 #right-column-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column-reverse;
-}
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  
+  * {
+    color: var(--text-high) !important;
+  }
+  
+  body {
+    background-color: var(--E0) !important;
+    color: var(--text-high) !important;
+  }
+  
+  body a {
+    color: var(--primary) !important;
+  }
+  
+  body header {
+    background-color: var(--E3) !important;
+    color: var(--text-high) !important;
+    /* notification bell dropdown menu*/
+  }
+  
+  body header nav,
+  body header nav button,
+  body header nav a {
+    background-color: var(--E3) !important;
+    color: var(--text-high) !important;
+  }
+  
+  body header nav ul li div,
+  body header *[role="menu"] {
+    background-color: var(--E3) !important;
+    border-color: var(--primary) !important;
+  }
+  
+  body header article {
+    border-color: var(--text-disabled) !important;
+  }
+  
+  body header article a {
+    outline-color: var(--text-medium) !important;
+  }
+  
+  body header article a div {
+    background-color: var(--E4) !important;
+  }
+  
+  body header input[placeholder="Search"] {
+    background-color: var(--E3) !important;
+  }
+  
+  body header .util-box-shadow-dropdown-2Bl9b button[aria-selected="true"],
+  body header .util-box-shadow-dropdown-2Bl9b a[href="/home/notifications?from_popup&"] {
+    background-color: var(--secondary) !important;
+  }
+  
+  body header .util-box-shadow-dropdown-2Bl9b a {
+    color: var(--primary) !important;
+  }
+  
+  body header a[href="/messages"] {
+    background-color: var(--secondary) !important;
+    color: var(--text-high) !important;
+  }
+  /*# sourceMappingURL=tweaker.css.map */

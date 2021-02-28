@@ -1,0 +1,827 @@
+// File Format
+// -----------
+// Login
+// Base styles
+//  - Navbar
+//  - Footer
+//  - Main content
+// Homepage content
+// Homepage sidebar (This is where "overdue" section is moved.)
+// Course content
+// Resources
+// Grades
+// Calendar
+// Assignment
+// Settings
+// Profile
+// Popups
+
+$E0: #121212;
+$E1: #1d1d1d;
+$E2: #212121;
+$E3: #242424;
+$E4: #272727;
+$E5: #2c2c2c;
+$E6: #2d2d2d;
+$E7: #323232;
+$E8: #353535;
+$E9: #373737;
+
+$primary: #84dfe2;
+$secondary: #f50057;
+
+$text-high: rgba(255, 255, 255, 0.87);
+$text-medium: rgba(255, 255, 255, 0.60);
+$text-disabled: rgba(255, 255, 255, 0.38);
+
+// Login
+
+html {
+    background-color: $E2 !important;
+
+    #supplementary {
+        background-color: $E3 !important;
+    
+        .login-content  {
+            background-color: $E5 !important;
+    
+            .sign-in-header {
+                color: $primary !important;
+            }
+
+            #edit-mail,
+            #edit-pass {
+                background-color: $E7 !important;
+            }
+    
+            input[value="Log in"] {
+                background-color: $secondary !important;
+            }
+        }
+    }
+}
+
+
+// End Login
+
+// Base styles
+* {
+    color: $text-high !important;
+}
+
+body {
+    background-color: $E0 !important;
+    color: $text-high !important;
+
+    a {
+        color: $primary !important;
+    }
+
+    .link-btn {
+        background: none !important;
+        color: $text-high !important;
+    }
+
+    input,
+    select,
+    option {
+        background-color: $E2 !important;
+    }
+
+    fieldset {
+        background-color: $E1 !important; 
+    }
+
+    // Navbar
+    header {
+        background-color: $E3 !important;
+        color: $text-high !important;
+
+        nav,
+        nav button,
+        nav a {
+            background-color: $E3 !important;
+            color: $text-high !important;
+        }
+
+        nav ul li div,
+        *[role="menu"] {
+            background-color: $E3 !important;
+            border-color: $primary !important;
+        }
+
+        article {
+            border-color: $text-disabled !important;
+        }
+
+        article a {
+            outline-color: $text-medium !important;
+        }
+
+        article a div {
+            background-color: $E4 !important;
+        }
+
+
+        input[placeholder="Search"] {
+            background-color: $E3 !important;
+        }
+
+        // notification bell dropdown menu
+        .util-box-shadow-dropdown-2Bl9b {
+            a {
+                color: $primary !important;
+            }
+
+            button[aria-selected="true"] {
+                background-color: $secondary !important;
+            }
+
+            a[href="/home/notifications?from_popup&"] {
+                background-color: $secondary !important;
+                color: $text-high !important;
+            }
+
+            a[href="/messages"] {
+                background-color: $secondary !important;
+                color: $text-high !important;
+            }
+        }
+
+
+    }
+
+    // End Navbar
+
+    // Footer
+    footer {
+        background-color: $E3 !important;
+    }
+
+    // End Footer
+
+    // Main content
+    #center #main {
+        background-color: $E1 !important;
+    }
+
+    // End Main content
+
+    div[aria-labelledby="site-nav-language-switcher"] {
+        background-color: $E2 !important;
+
+        header {
+            background-color: $E2 !important;
+        }
+
+        fieldset {
+            background-color: $E2 !important;
+        }
+
+        footer {
+            background-color: $E2 !important;
+
+            .LanguageSwitcher-button-wrapper-rr6Ly button span {
+                color: #000 !important;
+            }
+        }
+    }
+}
+
+// End Base styles
+
+// Homepage content
+#main-content-wrapper.clearfix.without-left-nav {
+
+    #center-inner {
+        background-color: $E0 !important;
+
+        #main {
+            background-color: $E0 !important;
+
+            ol {
+                border-bottom-color: $text-high !important;
+
+                li.active {
+                    border-bottom-color: $text-high !important;
+                }
+            }
+
+            #home-feed-container {
+                background-color: $E1 !important;
+
+                #edge-filters {
+
+                    #edge-filters-menu {
+                        background-color: $E1 !important;
+
+                        .active {
+                            background-position: 0 -257px !important;
+                        }
+                    }
+                }
+
+                #smart-box {
+                    border-color: $text-disabled !important;
+                }
+
+                .feed {
+                    .edge-item {
+                        .edge-sentence {
+                            .update-body * {
+                                background-color: $E1 !important;
+                                color: $text-high !important;
+                                border-color: $text-disabled !important;
+                            }
+
+                            .s-polls-results-overlay {
+                                background-color: $E9 !important;
+                            }
+                        }
+
+                        .edge-main {
+                            background-color: $E1 !important;
+                            color: $text-high !important;
+                        }
+
+                        .edge-footer {
+                            color: $text-medium !important;
+
+                            .created {
+                                color: $text-medium !important;
+                            }
+
+                            div.feed-comments {
+                                background-color: $E2 !important;
+
+                                div.comment-top {
+                                    .comment-author {
+                                        color: $text-high !important;
+                                    }
+
+                                    .comment-body-wrapper {
+                                        color: $text-high !important;
+                                    }
+                                }
+
+                                div.comment-footer {
+                                    span {
+                                        color: $text-medium !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sgy-card {
+                background-color: $E2 !important;
+                border-color: $text-disabled !important;
+
+                .sgy-card-context {
+                    background-color: $E2 !important;
+                    border-color: $text-disabled !important;
+                }
+            }
+        }
+    }
+}
+
+// End Homepage content
+
+// Homepage sidebar
+#main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed {
+    background-color: $E0 !important;
+
+    #right-column-inner {
+        // "overdue" section tweak <---
+        display: flex;
+        flex-direction: column-reverse;
+
+        #overdue-submissions {
+            background-color: $E1 !important;
+        }
+
+        .upcoming-events {
+            background-color: $E1 !important;
+        }
+    }
+}
+
+// End Homepage sidebar
+
+// Course content
+#sidebar-left {
+    #left-nav {
+        li.active-trail div a.active {
+            background-color: $E1 !important;
+        }
+
+        #course-materials-dropdown {
+            background-color: $E2 !important;
+
+            .item-list ul li a {
+                background-color: $E2 !important;
+
+                &:hover {
+                    background-color: $E5 !important;
+                }
+            }
+        }
+
+        #updates-count {
+            background-color: $secondary !important;
+        }
+    }
+}
+
+#main-content-wrapper {
+    background-color: $E1 !important;
+    border-color: $text-disabled !important;
+
+    #center-wrapper {
+        background-color: $E1 !important;
+        border-color: $text-disabled !important;
+
+        #center-top {
+            background-color: $E1 !important;
+            border-color: $text-disabled !important;
+
+            .content-top-upper {
+                background-color: $E1 !important;
+            }
+
+            .realm-top-right {
+                a#edit-course-switcher-select-nid-button {
+                    background: $E5 !important;
+
+                    .edit-course-inline-dropdown-arrow {
+                        clip: rect(0, 30px, 610px, 0) !important;
+                        top: -594px !important;
+                    }
+                }
+
+                ul#edit-course-switcher-select-nid-menu {
+                    background-color: $E3 !important;
+
+                    li.ui-selectmenu-group {
+                        ul li:hover a {
+                            background-color: $E5 !important;
+                        }
+                    }
+                }
+
+                a.notification-settings {
+                    background: $E5 !important;
+                }
+
+                div.notif-setting-dropdown {
+                    background-color: $E3 !important;
+                    border-color: $text-disabled !important;
+
+                    label.option:hover {
+                        background-color: $E5 !important;
+                    }
+
+                    a.cancel-btn {
+                        color: #000 !important;
+                    }
+
+
+                }
+            }
+        }
+
+        #content-wrapper {
+
+            // materials section
+            #course-profile-materials {
+                background-color: var(--E2) !important;
+            }
+
+            .materials-top {
+                border-color: $text-disabled !important;
+
+                .action-links-wrapper {
+                    background-color: $E1 !important;
+
+                    span.action-links-unfold-text {
+                        background: url(/sites/all/themes/schoology_theme/images/arrow-down.png?60391c9360bd4989) no-repeat 5px 50%;
+                        width: auto;
+                        height: auto;
+                        padding: 5px 0 5px 22px;
+                    }
+
+                    .action-links {
+                        background-color: $E2 !important;
+
+                        li {
+                            .selected {
+                                background-position: 0 -256px !important;
+                            }
+
+                            &:hover {
+                                background-color: $E5 !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #course-profile-materials-folders {
+                .folder-contents-cell {
+                    border-color: $text-disabled !important;
+                }
+            }
+
+            // updates section
+            .update-body * {
+                background-color: $E1 !important;
+            }
+
+            .edge-footer .created * {
+                color: $text-medium !important;
+            }
+
+            form {
+                border-color: $text-disabled !important;
+            }
+
+            li {
+                border-color: $text-disabled !important;
+            }
+
+            .feed-comments {
+                background-color: $E2 !important;
+            }
+
+            #edge-filters {
+                background-color: $E1 !important;
+
+                #edge-filters-btn {
+                    color: $text-high !important;
+                    opacity: 1 !important;
+                }
+
+                #edge-filters-menu {
+                    background-color: $E2 !important;
+
+                    .active {
+                        background-position: 0 -257px !important;
+                    }
+                }
+            }
+
+            #right-column {
+                background-color: $E1 !important;
+
+                #event-selector {
+                    border-color: $text-disabled !important;
+                }
+
+                h4 {
+                    border-color: $text-disabled !important;
+                }
+            }
+        }
+
+        .collection-row-empty td {
+            background-color: $E2 !important;
+        }
+    }
+}
+
+// End Course content
+
+// Resources
+#library-wrapper {
+    background-color: $E1 !important;
+    border-color: $text-disabled !important;
+
+    div {
+        background-color: $E1 !important;
+        border-color: $text-disabled !important;
+
+        .library-collection a[href="/resources"] {
+            background-color: $E2 !important;
+        }
+    }
+
+    span.action-links-unfold-text {
+        color: #000 !important;
+    }
+
+    div.action-links-unfold.active span {
+        color: $text-high !important;
+    }
+
+    ul.action-links {
+        background-color: $E2 !important;
+    }
+
+    #library-left-nav {
+        a {
+            &.active {
+                background-color: $E5 !important;
+            }
+
+            &:hover {
+                background-color: $E5 !important;
+            }
+        }
+
+    }
+}
+
+// End Resources
+
+// Grades
+#main {
+    padding-bottom: 0 !important;
+
+    div#main-inner {
+
+        // gradebook
+        .gradebook-course {
+            background-color: $E1 !important;
+            border-color: $text-disabled !important;
+        }
+    }
+}
+
+// mastery
+.summary-course {
+    background-color: $E2 !important;
+    border-color: $text-disabled !important;
+}
+
+#s-js-student-mastery-report-view-content {
+    background-color: $E1 !important;
+}
+
+#content-wrapper {
+    background-color: $E1 !important;
+}
+
+.master-course-switcher-row {
+    background-color: $E1 !important;
+}
+
+div.select2-drop {
+    background-color: $E2 !important;
+}
+
+// End Grades
+
+// Calendar
+#fcalendar {
+    background-color: $E1 !important;
+
+    .fc-header {
+        span[role="button"] {
+            background: none !important;
+            background-color: $E1 !important;
+
+            &.fc-state-active {
+                border-color: $primary !important;
+            }
+        }
+    }
+
+    .fc-event {
+        background-color: $E6 !important;
+    }
+
+    .fcalendar-filter-menu-wrapper {
+        background-color: $E2 !important;
+    }
+}
+
+.share-calendar-option {
+    background-color: $E1 !important;
+}
+
+// End Calendar
+
+// Assignment
+#center-top {
+    border-color: $text-disabled !important;
+
+    .content-top-upper {
+        border-color: $text-disabled !important;
+    }
+
+    .info-container {
+        .grading-info {
+            background-color: $E2 !important;
+        }
+    }
+
+}
+
+#main {
+    #main-inner {
+        .assignment-details {
+            border-color: $text-disabled !important;
+        }
+
+        table,
+        thead,
+        tr,
+        td,
+        th {
+            background-color: $E2 !important;
+        }
+    }
+}
+
+.comment-container {
+    textarea {
+        background-color: $E2 !important;
+    }
+
+    input[type="submit"] {
+        background-color: $secondary !important;
+        color: $text-high !important;
+    }
+
+    .comment-contents-container {
+        .comment {
+            border-color: $text-disabled !important;
+        }
+    }
+}
+
+.drop-items {
+    h3 {
+        border-color: $text-disabled !important;
+    }
+
+    li:hover {
+        background-color: $E5 !important;
+    }
+
+    .submission-status {
+        &.ontime {
+            color: #38852C !important;
+        }
+
+        &.late {
+            color: #DD373A !important;
+        }
+    }
+
+    .submit-assignment {
+        .dropbox-submit {
+            color: $text-high !important;
+            background: none !important;
+            background-color: $secondary !important;
+            border-color: $text-disabled !important;
+        }
+    }
+}
+
+// End Assignment
+
+// Settings
+#center-top {
+    background: none !important;
+}
+
+#tabs-wrapper {
+    .tabs {
+        background: none !important;
+        background-color: $E1 !important;
+
+        li div a {
+            background: none !important;
+            background-color: $E2 !important;
+        }
+    }
+}
+
+.ui-selectmenu-status {
+    background: none !important;
+    background-color: $E3 !important;
+}
+
+.cellphone-container {
+    background-color: $E2 !important;
+}
+// End Settings
+
+// Profile
+.portfolio-list {
+    background-color: $E3 !important;
+
+    .portfolio-list__add-new {
+        background-color: $E3 !important;
+    }
+
+    .portfolio-card,
+    .portfolio-card__bottom,
+    .portfolio-card__toolbar {
+        background-color: $E4 !important;
+    }
+}
+
+.portfolio-route-content {
+    background-color: $E3 !important;
+}
+
+// End Profile
+
+// Popups
+.popups-box {
+    .popups-title {
+        background-color: $E4 !important;
+    }
+
+    .popups-body {
+        background-color: $E5 !important;
+
+        input,
+        label,
+        fieldset,
+        span[role="button"],
+        textarea,
+        .browser-realm-checkboxes,
+        .popups-tab {
+            background-color: $E8 !important;
+        }
+
+        select {
+            background-color: $E8 !important;
+
+            option {
+                background-color: $E8 !important;
+            }
+        }
+
+        .sEventCalendarImportProcessed {
+            background-color: $E5 !important;
+        }
+
+        .dropbox-viewer-submission-activity,
+        #dropbox-viewer-right-toggle,
+        #dropbox-viewer-right,
+        #dropbox-viewer-comments,
+        .comment {
+            background-color: $E2 !important;
+            border-color: $text-disabled !important;
+        }
+    }
+
+    .submit-buttons,
+    .popups-buttons-inner,
+    .popups-tabs,
+    #resources-left-menu-wrapper,
+    .all-contents tr td {
+        background: none !important;
+        background-color: $E4 !important;
+
+        a,
+        input[id="popup_close"] {
+            color: #808080 !important;
+        }
+    }
+
+    input[type="submit"] {
+        background-color: $secondary !important;
+    }
+}
+
+#ui-datepicker-div {
+    background-color: $E6 !important;
+
+    .ui-datepicker-prev a {
+        background-color: #bbbbbb;
+    }
+
+    .ui-datepicker-new-month {
+        background-color: $E6 !important;
+    }
+
+    .ui-datepicker-new-year {
+        background-color: $E6 !important;
+    }
+
+    .ui-datepicker-next a {
+        background-color: #bbbbbb;
+    }
+
+    .ui-datepicker-days-cell {
+        background-color: $E7 !important;
+        border-color: $text-disabled !important;
+
+        a {
+            background-color: $E7 !important;
+        }
+    }
+}
+
+.popover-content {
+    background-color: $E3 !important;
+}
+// End Popups
