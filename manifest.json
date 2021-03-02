@@ -6,9 +6,9 @@
     "description": "Schoology Dark Mode! move 'Overdue' section out of the way.",
    
     "content_scripts": [{
-      "css": ["styles.css"],
+      "css": ["tweaker.css"],
       "js": ["script.js"],
-      "matches": ["https://schoology.newton.k12.ma.us/*"]
+      "matches": ["https://schoology.newton.k12.ma.us/*", "https://*.schoology.com/*"]
     }]
    
 }

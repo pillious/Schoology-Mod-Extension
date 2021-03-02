@@ -1,4 +1,4 @@
-// File Format
+// File Sections
 // -----------
 // Login
 // Base styles
@@ -14,6 +14,8 @@
 // Assignment
 // Settings
 // Profile
+// Discussions
+// Tests
 // Popups
 // Submission textboxes
 
@@ -42,10 +44,10 @@ html {
 
     #supplementary {
         background-color: $E3 !important;
-    
-        .login-content  {
+
+        .login-content {
             background-color: $E5 !important;
-    
+
             .sign-in-header {
                 color: $primary !important;
             }
@@ -54,7 +56,7 @@ html {
             #edit-pass {
                 background-color: $E7 !important;
             }
-    
+
             input[value="Log in"] {
                 background-color: $secondary !important;
             }
@@ -86,7 +88,9 @@ body {
     input,
     select,
     option,
-    table, td, th {
+    table,
+    td,
+    th {
         background-color: $E2 !important;
     }
 
@@ -94,8 +98,12 @@ body {
         background-color: $secondary !important;
     }
 
+    textarea {
+        background-color: $E3 !important;
+    }
+
     fieldset {
-        background-color: $E1 !important; 
+        background-color: $E1 !important;
     }
 
     // Navbar
@@ -131,6 +139,12 @@ body {
 
         input[placeholder="Search"] {
             background-color: $E3 !important;
+        }
+
+        button[aria-label*="notification"] {
+            span {
+                background-color: $secondary !important;
+            }
         }
 
         // notification bell dropdown menu
@@ -340,6 +354,11 @@ body {
             background-color: $secondary !important;
         }
     }
+
+    // nearpod link
+    .app-link {
+        background-color: $E0 !important;
+    }
 }
 
 #main-content-wrapper {
@@ -509,8 +528,107 @@ body {
         }
 
         .search-results {
-            background-color: $E2 !important;       
+            background-color: $E2 !important;
         }
+    }
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav {
+    #main-content-wrapper.clearfix.without-left-nav {
+        #tabs-wrapper {
+            background-color: $E1 !important;
+        }
+
+        #center-wrapper {
+            #center-inner {
+                background-color: $E1 !important;
+
+                #main {
+                    background-color: $E1 !important;
+
+                    #main-inner {
+                        background-color: $E1 !important;
+
+                        .course-item {
+                            background-color: $E2 !important;
+                        }
+                    }
+                }
+
+                #right-column {
+                    .sgy-course-search-form {
+                        .Select-control {
+                            background-color: $E1 !important;
+
+                            .Select-item {
+                                background-color: $E9 !important;
+                            }
+                        }
+
+                        div.Select {
+                            .Select-menu-outer {
+                                * {
+                                    background-color: $E2 !important;
+
+                                    &:hover {
+                                        background-color: $E9 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .sgy-course-search-form__submit-row {
+                        background-color: $E1 !important;
+                        border: none !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// groups
+.group-list-view.s-enable-course-dashboard.s-hide-left-nav {
+    #main-content-wrapper.clearfix.without-left-nav {
+        #tabs-wrapper {
+            background-color: $E1 !important;
+        }
+
+        #center-wrapper {
+            #center-inner {
+                background-color: $E1 !important;
+
+                #main {
+                    background-color: $E1 !important;
+
+                    #main-inner {
+                        background-color: $E1 !important;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+input#s2id_autogen1_search {
+    color: #000 !important;
+}
+
+li.select2-no-results {
+    background-color: $E2 !important;
+}
+
+div[aria-labelledby^="reorder-ui"] {
+    background-color: $E2 !important;
+
+    header {
+        background-color: $E2 !important;
+    }
+
+    .Card-card-2rORL {
+        background-color: $E3 !important;
     }
 }
 
@@ -573,7 +691,9 @@ body {
 }
 
 .s-slider {
-    th, td {
+
+    th,
+    td {
         border-color: $text-disabled !important;
     }
 
@@ -732,7 +852,7 @@ div.select2-drop {
 
 .messages {
     .message-text {
-        background-color: transparent !important;
+        background-color: #e3ffd8 !important;
         color: #000 !important;
     }
 
@@ -740,6 +860,29 @@ div.select2-drop {
         color: #9DD684 !important;
     }
 }
+
+.progressContainer {
+    background-color: $E5 !important;
+}
+
+// embedded google docs assignment
+.profile-container-4015500229 {
+    background-color: $E1 !important;
+
+    .profile-header-2536997237 {
+        background-color: $E0 !important;
+
+        .layout-row-inner-3835588998 {
+            background-color: $E1 !important;
+        }
+
+    }
+
+    .content-box-container-3232021855 {
+        background-color: $E2 !important;
+    }
+}
+
 
 // End Assignment
 
@@ -768,6 +911,7 @@ div.select2-drop {
 .cellphone-container {
     background-color: $E2 !important;
 }
+
 // End Settings
 
 // Profile
@@ -789,7 +933,102 @@ div.select2-drop {
     background-color: $E3 !important;
 }
 
+.portfolio-view {
+    .portfolio-title-bar {
+        background-color: $E2 !important;
+
+        input[name="title"] {
+            background-color: $E2 !important;
+        }
+    }
+
+    .portfolio-view__content {
+        background-color: $E2 !important;
+
+        .item-card__bottom {
+            background-color: $E3 !important;
+        }
+    }
+}
+
 // End Profile
+
+// Discussions
+.discussion-view {
+    .page-title {
+        background-color: $E2 !important;
+        border-color: $text-disabled !important;
+    }
+
+    #content-wrapper {
+        border-color: $text-disabled !important;
+
+        .discussion-content {
+            border-color: $text-disabled !important;
+
+            .s-comments-post-form {
+                background-color: $E3 !important;
+            }
+
+            .discussion-action-bar {
+                background-color: $E3 !important;
+                border-color: $text-disabled !important;
+            }
+
+            #s_comments .discussion-card {
+                background-color: $E2 !important;
+                box-shadow: none !important;
+
+                p {
+                    background-color: $E3 !important;
+
+                    span {
+                        background-color: $E3 !important;
+                    }
+                }
+            }
+
+            .expander-bar {
+                background-color: $E3 !important;
+                border-color: $text-disabled !important;
+            }
+
+            .comment {
+                border-color: $text-disabled !important;
+            }
+
+            .s_comments_level {
+                background-color: $E3 !important;
+                border-color: $text-disabled !important;
+            }
+        }
+    }
+
+    #comment-placeholder {
+        background-color: $E5 !important;
+    }
+}
+
+// End Discussions
+
+// Tests 
+#s-assessment-view-submission-form {
+    .selected {
+        span.option-span {
+            background-color: $E9 !important;
+        }
+    }
+}
+
+.cc-tags {
+    .param-val .term-item-tags {
+        .term-item-tag {
+            background: none !important;
+        }
+    }
+}
+
+// End Tests
 
 // Popups
 .popups-box {
@@ -899,6 +1138,11 @@ div[aria-labelledby="modal-heading"] {
         background-color: $secondary !important;
     }
 }
+
+#error-page {
+    background-color: $E2 !important;
+}
+
 // End Popups
 
 // Submission textboxes
@@ -906,7 +1150,7 @@ div[aria-labelledby="modal-heading"] {
     background-color: $E6 !important;
 
     *:not(.mceColorPreview) {
-        background-color: $E6 !important; 
+        background-color: $E6 !important;
     }
 
     .mceMenu {
@@ -921,4 +1165,5 @@ div[aria-labelledby="modal-heading"] {
 .mceMenuItem a:hover {
     background-color: $E9 !important;
 }
+
 // End Submission textboxes

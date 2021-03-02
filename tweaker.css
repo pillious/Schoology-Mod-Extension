@@ -44,12 +44,18 @@ body .link-btn {
 body input,
 body select,
 body option,
-body table, body td, body th {
+body table,
+body td,
+body th {
   background-color: #212121 !important;
 }
 
 body input[type="submit"] {
   background-color: #f50057 !important;
+}
+
+body textarea {
+  background-color: #242424 !important;
 }
 
 body fieldset {
@@ -88,6 +94,10 @@ body header article a div {
 
 body header input[placeholder="Search"] {
   background-color: #242424 !important;
+}
+
+body header button[aria-label*="notification"] span {
+  background-color: #f50057 !important;
 }
 
 body header .util-box-shadow-dropdown-2Bl9b a {
@@ -259,6 +269,10 @@ body div[aria-labelledby="site-nav-language-switcher"] footer .LanguageSwitcher-
   background-color: #f50057 !important;
 }
 
+#sidebar-left .app-link {
+  background-color: #121212 !important;
+}
+
 #main-content-wrapper {
   background-color: #1d1d1d !important;
   border-color: rgba(255, 255, 255, 0.38) !important;
@@ -416,6 +430,83 @@ body div[aria-labelledby="site-nav-language-switcher"] footer .LanguageSwitcher-
   background-color: #212121 !important;
 }
 
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #tabs-wrapper {
+  background-color: #1d1d1d !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner {
+  background-color: #1d1d1d !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #main {
+  background-color: #1d1d1d !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #main #main-inner {
+  background-color: #1d1d1d !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #main #main-inner .course-item {
+  background-color: #212121 !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #right-column .sgy-course-search-form .Select-control {
+  background-color: #1d1d1d !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #right-column .sgy-course-search-form .Select-control .Select-item {
+  background-color: #373737 !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #right-column .sgy-course-search-form div.Select .Select-menu-outer * {
+  background-color: #212121 !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #right-column .sgy-course-search-form div.Select .Select-menu-outer *:hover {
+  background-color: #373737 !important;
+}
+
+.course-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #right-column .sgy-course-search-form__submit-row {
+  background-color: #1d1d1d !important;
+  border: none !important;
+}
+
+.group-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #tabs-wrapper {
+  background-color: #1d1d1d !important;
+}
+
+.group-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner {
+  background-color: #1d1d1d !important;
+}
+
+.group-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #main {
+  background-color: #1d1d1d !important;
+}
+
+.group-list-view.s-enable-course-dashboard.s-hide-left-nav #main-content-wrapper.clearfix.without-left-nav #center-wrapper #center-inner #main #main-inner {
+  background-color: #1d1d1d !important;
+}
+
+input#s2id_autogen1_search {
+  color: #000 !important;
+}
+
+li.select2-no-results {
+  background-color: #212121 !important;
+}
+
+div[aria-labelledby^="reorder-ui"] {
+  background-color: #212121 !important;
+}
+
+div[aria-labelledby^="reorder-ui"] header {
+  background-color: #212121 !important;
+}
+
+div[aria-labelledby^="reorder-ui"] .Card-card-2rORL {
+  background-color: #242424 !important;
+}
+
 #library-wrapper {
   background-color: #1d1d1d !important;
   border-color: rgba(255, 255, 255, 0.38) !important;
@@ -459,7 +550,8 @@ body div[aria-labelledby="site-nav-language-switcher"] footer .LanguageSwitcher-
   border-color: rgba(255, 255, 255, 0.38) !important;
 }
 
-.s-slider th, .s-slider td {
+.s-slider th,
+.s-slider td {
   border-color: rgba(255, 255, 255, 0.38) !important;
 }
 
@@ -588,12 +680,32 @@ div.select2-drop {
 }
 
 .messages .message-text {
-  background-color: transparent !important;
+  background-color: #e3ffd8 !important;
   color: #000 !important;
 }
 
 .messages .status .messages-close-btn {
   color: #9DD684 !important;
+}
+
+.progressContainer {
+  background-color: #2c2c2c !important;
+}
+
+.profile-container-4015500229 {
+  background-color: #1d1d1d !important;
+}
+
+.profile-container-4015500229 .profile-header-2536997237 {
+  background-color: #121212 !important;
+}
+
+.profile-container-4015500229 .profile-header-2536997237 .layout-row-inner-3835588998 {
+  background-color: #1d1d1d !important;
+}
+
+.profile-container-4015500229 .content-box-container-3232021855 {
+  background-color: #212121 !important;
 }
 
 #center-top {
@@ -635,6 +747,84 @@ div.select2-drop {
 
 .portfolio-route-content {
   background-color: #242424 !important;
+}
+
+.portfolio-view .portfolio-title-bar {
+  background-color: #212121 !important;
+}
+
+.portfolio-view .portfolio-title-bar input[name="title"] {
+  background-color: #212121 !important;
+}
+
+.portfolio-view .portfolio-view__content {
+  background-color: #212121 !important;
+}
+
+.portfolio-view .portfolio-view__content .item-card__bottom {
+  background-color: #242424 !important;
+}
+
+.discussion-view .page-title {
+  background-color: #212121 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #content-wrapper {
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #content-wrapper .discussion-content {
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #content-wrapper .discussion-content .s-comments-post-form {
+  background-color: #242424 !important;
+}
+
+.discussion-view #content-wrapper .discussion-content .discussion-action-bar {
+  background-color: #242424 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #content-wrapper .discussion-content #s_comments .discussion-card {
+  background-color: #212121 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.discussion-view #content-wrapper .discussion-content #s_comments .discussion-card p {
+  background-color: #242424 !important;
+}
+
+.discussion-view #content-wrapper .discussion-content #s_comments .discussion-card p span {
+  background-color: #242424 !important;
+}
+
+.discussion-view #content-wrapper .discussion-content .expander-bar {
+  background-color: #242424 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #content-wrapper .discussion-content .comment {
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #content-wrapper .discussion-content .s_comments_level {
+  background-color: #242424 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.discussion-view #comment-placeholder {
+  background-color: #2c2c2c !important;
+}
+
+#s-assessment-view-submission-form .selected span.option-span {
+  background-color: #373737 !important;
+}
+
+.cc-tags .param-val .term-item-tags .term-item-tag {
+  background: none !important;
 }
 
 .popups-box .popups-title {
@@ -749,6 +939,10 @@ div[aria-labelledby="modal-heading"] .RecordTypeCard-card-AjKIG {
 
 div[aria-labelledby="modal-heading"] button {
   background-color: #f50057 !important;
+}
+
+#error-page {
+  background-color: #212121 !important;
 }
 
 .mceToolbar {
