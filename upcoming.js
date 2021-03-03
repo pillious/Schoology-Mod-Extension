@@ -3,7 +3,7 @@ var upcoming = document.querySelector(".upcoming-events");
 window.onload = async function () {
     // start observing
     getStoredAssignments()
-    observer.observe(document, {
+    observer.observe(document.getElementsByClassName("upcoming-events")[0], {
         childList: true,
         subtree: true
     });
