@@ -1,27 +1,37 @@
-var upcoming = document.querySelector(".upcoming-events");
+var upcoming = document.querySelector(".upcoming-events");;
 
 window.onload = async function () {
-    // start observing
-    try {
-        observer.observe(document.getElementsByClassName("upcoming-events")[0], {
+    // Add checkboxes to course homepages <-------
+    // if (document.body.classList.contains("is-home") ||
+    //     document.body.classList.contains("s-course-materials-has-add-content")) {
+    if (document.body.classList.contains("is-home")) {
+        // start observing
+        observer.observe(document, {
             childList: true,
             subtree: true
         });
     }
-    catch(err) {};
 }
 
 // wait for upcoming to populate before adding checkboxes
 var observer = new MutationObserver(function (mutations, me) {
     // `mutations` is an array of mutations that occurred
     // `me` is the MutationObserver instance
-    var assignments = upcoming.querySelectorAll(".infotip");
-    if (assignments) {
-        cleanLocalStorage(assignments);
-        appendCheckboxes(assignments);
+    if (upcoming) {
+        var assignments = upcoming.querySelectorAll(".infotip");
+        if (assignments) {
+            if (document.body.classList.contains("is-home")) {
+                cleanLocalStorage(assignments);
+            }
+            appendCheckboxes(assignments);
+            me.disconnect();
+            return;
+        }
+    } else {
         me.disconnect();
         return;
     }
+
 });
 
 function appendCheckboxes(assignments) {
@@ -51,7 +61,7 @@ function createCheckbox(aLink, storedAssignments) {
     }
 
 
-    input.addEventListener("click", function() {
+    input.addEventListener("click", function () {
         stOnAssignmentCheck(this.checked, this.dataset.assignment)
     });
 
@@ -68,13 +78,20 @@ function createCheckbox(aLink, storedAssignments) {
 function stOnAssignmentCheck(isChecked, aLink) {
     var stored = getStoredAssignments();
     if (stored === null) {
-        localStorage.setItem("st-assignments", JSON.stringify({data: []}));
-        stored = {data: []};
+        localStorage.setItem("st-assignments", JSON.stringify({
+            data: []
+        }));
+        stored = {
+            data: []
+        };
     }
 
     const index = stored.data.findIndex((e) => e.assignment === aLink);
     if (index === -1) {
-        stored.data.push({"assignment": aLink, "isComplete": isChecked});
+        stored.data.push({
+            "assignment": aLink,
+            "isComplete": isChecked
+        });
     } else {
         stored.data[index].isComplete = isChecked;
     }
@@ -96,15 +113,15 @@ function cleanLocalStorage(currentAssignments) {
         currentAssignments.forEach((a) => {
             currentAssignmentLinks.push(a.firstElementChild.nextSibling.pathname)
         });
-    
-        
+
+
         stored.data.forEach((a, index) => {
             const i = currentAssignmentLinks.findIndex((e) => e === a.assignment);
             if (i === -1) {
                 stored.data.splice(index, 1);
             }
         });
-        
+
         localStorage.setItem("st-assignments", JSON.stringify(stored));
     }
 }
