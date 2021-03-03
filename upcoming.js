@@ -1,7 +1,7 @@
 var upcoming = document.querySelector(".upcoming-events");;
 
 window.onload = async function () {
-    // Add checkboxes to course homepages <-------
+    // TODO: Add checkboxes to course homepages 
     // if (document.body.classList.contains("is-home") ||
     //     document.body.classList.contains("s-course-materials-has-add-content")) {
     if (document.body.classList.contains("is-home")) {
@@ -15,15 +15,16 @@ window.onload = async function () {
 
 // wait for upcoming to populate before adding checkboxes
 var observer = new MutationObserver(function (mutations, me) {
-    // `mutations` is an array of mutations that occurred
-    // `me` is the MutationObserver instance
+    // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
     if (upcoming) {
-        var assignments = upcoming.querySelectorAll(".infotip");
+        let assignments = upcoming.querySelectorAll("a[href*=assignment]");
+        let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
+
         if (assignments) {
             if (document.body.classList.contains("is-home")) {
-                cleanLocalStorage(assignments);
+                cleanLocalStorage(assignments, dueDates);
             }
-            appendCheckboxes(assignments);
+            appendCheckboxes(assignments, dueDates);
             me.disconnect();
             return;
         }
@@ -34,15 +35,15 @@ var observer = new MutationObserver(function (mutations, me) {
 
 });
 
-function appendCheckboxes(assignments) {
+function appendCheckboxes(assignments, dueDates) {
     var stored = getStoredAssignments();
-    assignments.forEach(a => {
-        var aLink = a.firstElementChild.nextSibling.pathname;
-        a.insertBefore(createCheckbox(aLink, stored), a.firstElementChild.nextSibling);
+    assignments.forEach((a, idx) => {
+        var aLink = a.pathname;
+        a.parentNode.insertBefore(createCheckbox(aLink, dueDates[idx], stored), a.nextSibling);
     });
 }
 
-function createCheckbox(aLink, storedAssignments) {
+function createCheckbox(aLink, dueDate, storedAssignments) {
     var label = document.createElement("label");
     label.className = "st-checkbox-container";
     label.innerHTML = "&nbsp";
@@ -51,6 +52,7 @@ function createCheckbox(aLink, storedAssignments) {
     input.type = "checkbox";
     input.className = "st-checkbox";
     input.dataset.assignment = aLink;
+    input.dataset.due = dueDate;
 
     if (storedAssignments && storedAssignments.data.length > 0) {
         const index = storedAssignments.data.findIndex((e) => e.assignment === aLink);
@@ -62,7 +64,7 @@ function createCheckbox(aLink, storedAssignments) {
 
 
     input.addEventListener("click", function () {
-        stOnAssignmentCheck(this.checked, this.dataset.assignment)
+        stOnAssignmentCheck(this.checked, this.dataset.assignment, this.dataset.due)
     });
 
     var span = document.createElement("span");
@@ -75,7 +77,7 @@ function createCheckbox(aLink, storedAssignments) {
 }
 
 // updates local storage when checkbox is clicked
-function stOnAssignmentCheck(isChecked, aLink) {
+function stOnAssignmentCheck(isChecked, aLink, due) {
     var stored = getStoredAssignments();
     if (stored === null) {
         localStorage.setItem("st-assignments", JSON.stringify({
@@ -90,6 +92,7 @@ function stOnAssignmentCheck(isChecked, aLink) {
     if (index === -1) {
         stored.data.push({
             "assignment": aLink,
+            "due": due,
             "isComplete": isChecked
         });
     } else {
@@ -104,21 +107,16 @@ function getStoredAssignments() {
     return JSON.parse(localStorage.getItem("st-assignments"));
 }
 
-// remove all unneccesary assignments from local storage
+// remove assignment from local storage if past due date.
 function cleanLocalStorage(currentAssignments) {
-    var stored = getStoredAssignments();
+    let stored = getStoredAssignments();
 
     if (stored && stored.data.length > 0) {
-        var currentAssignmentLinks = [];
-        currentAssignments.forEach((a) => {
-            currentAssignmentLinks.push(a.firstElementChild.nextSibling.pathname)
-        });
+        let d = new Date();
 
-
-        stored.data.forEach((a, index) => {
-            const i = currentAssignmentLinks.findIndex((e) => e === a.assignment);
-            if (i === -1) {
-                stored.data.splice(index, 1);
+        stored.data.forEach((s, idx) => {
+            if (parseInt(s.due) < parseInt(d.getTime() / 1000)) {
+                stored.data.splice(idx, 1);
             }
         });
 
