@@ -1,0 +1,158 @@
+body {
+  height: 300px;
+  width: 250px;
+  padding: 0.5rem;
+  background-color: #212121;
+  font-family: 'Inter', sans-serif;
+}
+
+body div.container div.header div.title {
+  margin: auto;
+  font-size: 24px;
+  color: #84dfe2;
+}
+
+body div.container div.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body div.container div.main div.toggle-title {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 16px;
+}
+
+body div.container div.main div.toggle-wrapper {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body div.container div.main div.toggle-wrapper .toggle {
+  display: inline-block;
+  cursor: pointer;
+}
+
+body div.container div.main div.toggle-wrapper .toggle .toggle__input {
+  display: none;
+}
+
+body div.container div.main div.toggle-wrapper .toggle .toggle__input:checked ~ .toggle__fill {
+  background: #CACACA;
+}
+
+body div.container div.main div.toggle-wrapper .toggle .toggle__input:checked ~ .toggle__fill::after {
+  -webkit-transform: translateX(calc(40px / 2));
+          transform: translateX(calc(40px / 2));
+}
+
+body div.container div.main div.toggle-wrapper .toggle .toggle__fill {
+  position: relative;
+  width: 40px;
+  height: calc(40px / 2);
+  border-radius: calc(calc(40px / 2) / 2);
+  background: #F9D71C;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+
+body div.container div.main div.toggle-wrapper .toggle .toggle__fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(40px / 2);
+  width: calc(40px / 2);
+  background: rgba(255, 255, 255, 0.87);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: calc(calc(40px / 2) / 2);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+body div.container div.main div.toggle-wrapper .tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+body div.container div.main div.toggle-wrapper .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+body div.container div.main div.toggle-wrapper .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+body div.container div.main div.toggle-wrapper .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+body div.container div.main div.toggle-wrapper .tooltip .sun-icon {
+  font-size: 24px;
+  color: #F9D71C;
+}
+
+body div.container div.main div.toggle-wrapper .tooltip .moon-icon {
+  font-size: 24px;
+  color: #CACACA;
+}
+
+body div.container div.main a.button4 {
+  width: 60px;
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #f50057;
+  background-color: #f50057;
+  border-radius: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87);
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+body div.container div.main a.button4:hover {
+  border-color: white;
+}
+/*# sourceMappingURL=popup.css.map */

@@ -1,7 +1,8 @@
 var upcoming = document.querySelector(".upcoming-events");;
 
 window.onload = async function () {
-    setTheme(getTheme());
+    themeManager();
+
     // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
         // start observing
@@ -123,16 +124,43 @@ function cleanLocalStorage(currentAssignments) {
     }
 }
 
-function getTheme() {
+async function themeManager() {
+    setTheme(await getTheme());
+
+    try {
+        chrome.storage.onChanged.addListener(async function(changes, area) {
+            if (area === "sync" || area  === "local" && "st-theme" in changes) {
+                setTheme(changes["st-theme"].newValue);
+            }
+        });
+    }
+    catch(err) {
+        console.log(err);
+    }
+
+}
+
+async function getTheme() {
+    try {
+        return new Promise((resolve, reject) => {
+            chrome.storage.sync.get(["st-theme"], function(result) {
+                if (result["st-theme"]) {
+                    resolve(result["st-theme"]);
+                }
+                else {
+                    resolve("dark");
+                }
+            });
+        });
+    }
+    catch(err) {
+        console.log(err);
+    }
+
     return "dark";
-    // return "light";
 }
 
 function setTheme(theme) {
-    console.log(document.documentElement);
-
     document.documentElement.setAttribute("data-st-theme", theme);
     document.body.setAttribute("data-st-theme", theme);
-
-    console.log(document.documentElement);
 }
