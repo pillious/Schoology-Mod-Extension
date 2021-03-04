@@ -3,14 +3,15 @@
  
   "name": "Schoology Tweaker",
   "version": "1",
-  "description": "Schoology Dark Mode! move 'Overdue' section out of the way.",
+  "description": "Development",
  
   "content_scripts": [{
     "css": ["tweaker.css"],
-    "js": ["script.js", "upcoming.js"],
+    "js": ["upcoming.js"],
     "matches": ["https://schoology.newton.k12.ma.us/*", "https://*.schoology.com/*"],
     "exclude_matches": [
       "https://*.schoology.com/register*",
+      "https://schoology.newton.k12.ma.us/register*",
       "*://asset-cdn.schoology.com/*",
       "*://developer.schoology.com/*",
       "*://support.schoology.com/*",
@@ -24,6 +25,9 @@
       "*://schoology.com/*",
       "*://support.schoology.com/*"
     ]
-  }]
+  }],
+  "permissions": [
+    "storage"
+  ]
  
 }

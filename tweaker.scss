@@ -1,12 +1,11 @@
-// File Sections
-// -----------
+// Dark mode styles
 // Login
 // Base styles
 //  - Navbar
 //  - Footer
 //  - Main content
 // Homepage content
-// Homepage sidebar (This is where "overdue" section is moved.)
+// Homepage sidebar
 // Course content
 // Resources
 // Grades
@@ -18,6 +17,10 @@
 // Tests
 // Popups
 // Submission textboxes
+// Schoology Helper
+
+// Universal styles
+// Sidebar tweak
 // Assignment checkboxes
 
 $E0: #121212;
@@ -38,9 +41,8 @@ $text-high: rgba(255, 255, 255, 0.87);
 $text-medium: rgba(255, 255, 255, 0.60);
 $text-disabled: rgba(255, 255, 255, 0.38);
 
-// Login
-
-html {
+html:not([data-st-theme="light"]) {
+    // Login
     background-color: $E2 !important;
 
     #supplementary {
@@ -63,17 +65,15 @@ html {
             }
         }
     }
+    // End Login 
+
+    // Base styles
+    * {
+        color: $text-high !important;
+    }
 }
 
-
-// End Login
-
-// Base styles
-* {
-    color: $text-high !important;
-}
-
-body {
+body:not([data-st-theme="light"]) {
     background-color: $E0 !important;
     color: $text-high !important;
 
@@ -207,7 +207,7 @@ body {
             }
         }
     }
-}
+// } // End Body dark styles
 
 // End Base styles
 
@@ -317,8 +317,8 @@ body {
 
     #right-column-inner {
         // "overdue" section tweak <---
-        display: flex;
-        flex-direction: column-reverse;
+        // display: flex;
+        // flex-direction: column-reverse;
 
         #overdue-submissions {
             background-color: $E1 !important;
@@ -862,6 +862,19 @@ div.select2-drop {
     }
 }
 
+.messages.error {
+    .messages-container {
+        tbody tr td {
+            background-color: #ffe5e5 !important;
+        }
+
+        .message-text {
+            background-color: #ffe5e5 !important;
+        }
+    }
+
+}
+
 .progressContainer {
     background-color: $E5 !important;
 }
@@ -1169,6 +1182,55 @@ div[aria-labelledby="modal-heading"] {
 
 // End Submission textboxes
 
+// Schoology helper
+._pendo-launcher_ {
+    a {
+        color: #4479B3 !important;
+    }
+
+    ._pendo-launcher-title_,
+    ._pendo-launcher-section-title_ {
+        color: #666666 !important;
+    }
+
+    ._pendo-launcher-menu_ {
+        ._pendo-launcher-menu-item-button_ {
+            ._pendo-launcher-menu-item-title_ {
+                color: #0677da !important;
+            }
+
+            ._pendo-launcher-menu-item-description_ {
+                color: #666666 !important;
+            }
+        }
+    }
+
+    #_pendo-launcher-kb-search-input_ {
+        background-color: #fff !important;
+        color: #666666 !important;
+    }
+
+    #_pendo-section-content-helpcenter-article-frame_ {
+        & * {
+            color: #666666 !important;
+        }
+
+        & a {
+            color: #4479B3 !important;
+        }
+    }
+
+    ._pendo-section-content-body-results_ {
+
+        ._pendo-section-content-search-header_,
+        ._pendo-section-content-search-empty_ * {
+            color: #666666 !important;
+        }
+    }
+}
+// End Schoology Helper
+}
+
 // Assignment checkboxes
 /* The container */
 .st-checkbox-container {
@@ -1231,4 +1293,13 @@ div[aria-labelledby="modal-heading"] {
         transform: rotate(45deg);
     }
 }
+
 // End Assignment checkboxes
+
+// Sidebar tweak
+#right-column-inner {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+// End Sidebar tweak

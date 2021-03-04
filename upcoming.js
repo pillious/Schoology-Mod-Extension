@@ -1,9 +1,8 @@
 var upcoming = document.querySelector(".upcoming-events");;
 
 window.onload = async function () {
-    // TODO: Add checkboxes to course homepages 
-    // if (document.body.classList.contains("is-home") ||
-    //     document.body.classList.contains("s-course-materials-has-add-content")) {
+    setTheme(getTheme());
+    // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
         // start observing
         observer.observe(document, {
@@ -122,4 +121,18 @@ function cleanLocalStorage(currentAssignments) {
 
         localStorage.setItem("st-assignments", JSON.stringify(stored));
     }
+}
+
+function getTheme() {
+    return "dark";
+    // return "light";
+}
+
+function setTheme(theme) {
+    console.log(document.documentElement);
+
+    document.documentElement.setAttribute("data-st-theme", theme);
+    document.body.setAttribute("data-st-theme", theme);
+
+    console.log(document.documentElement);
 }
