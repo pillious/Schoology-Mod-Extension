@@ -199,14 +199,14 @@ body div.container div.main-wrapper div.main div.confirm-wrapper a.confirm {
   width: 65x;
   display: inline-block;
   padding: 4px 10px;
-  border: 1px solid #84dfe2;
-  background-color: #84dfe2;
+  border: 1px solid #1D8487;
+  background-color: #1D8487;
   border-radius: 2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
   font-size: 14px;
-  color: #000;
+  color: rgba(255, 255, 255, 0.87);
   text-align: center;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;

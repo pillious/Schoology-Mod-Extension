@@ -10,7 +10,7 @@ $E8: #353535;
 $E9: #373737;
 
 $primary: #84dfe2;
-$secondary: #f50057;
+$secondary: #1D8487;
 
 $text-high: rgba(255, 255, 255, 0.87);
 $text-medium: rgba(255, 255, 255, 0.60);
@@ -176,13 +176,13 @@ body {
                         width: 65x;
                         display: inline-block;
                         padding: 4px 10px;
-                        border: 1px solid $primary;
-                        background-color: $primary;
+                        border: 1px solid $secondary;
+                        background-color: $secondary;
                         border-radius: 2rem;
                         box-sizing: border-box;
                         text-decoration: none;
                         font-size: 14px;
-                        color: #000;
+                        color: $text-high;
                         text-align: center;
                         transition: all 0.2s;
     
