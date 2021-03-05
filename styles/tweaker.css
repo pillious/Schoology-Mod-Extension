@@ -23,7 +23,7 @@ html:not([data-st-theme="light"]) #supplementary .login-content #edit-school {
 }
 
 html:not([data-st-theme="light"]) #supplementary .login-content input[value="Log in"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 html:not([data-st-theme="light"]) #supplementary .login-content .remote-auth-help {
@@ -82,7 +82,7 @@ body:not([data-st-theme="light"]) th {
 }
 
 body:not([data-st-theme="light"]) input[type="submit"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 body:not([data-st-theme="light"]) textarea {
@@ -128,7 +128,7 @@ body:not([data-st-theme="light"]) header input[placeholder="Search"] {
 }
 
 body:not([data-st-theme="light"]) header button[aria-label*="notification"] span {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 body:not([data-st-theme="light"]) header .util-box-shadow-dropdown-2Bl9b a {
@@ -136,16 +136,16 @@ body:not([data-st-theme="light"]) header .util-box-shadow-dropdown-2Bl9b a {
 }
 
 body:not([data-st-theme="light"]) header .util-box-shadow-dropdown-2Bl9b button[aria-selected="true"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 body:not([data-st-theme="light"]) header .util-box-shadow-dropdown-2Bl9b a[href="/home/notifications?from_popup&"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
   color: rgba(255, 255, 255, 0.87) !important;
 }
 
 body:not([data-st-theme="light"]) header .util-box-shadow-dropdown-2Bl9b a[href="/messages"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
   color: rgba(255, 255, 255, 0.87) !important;
 }
 
@@ -287,7 +287,7 @@ body:not([data-st-theme="light"]) #sidebar-left #left-nav #course-materials-drop
 }
 
 body:not([data-st-theme="light"]) #sidebar-left #left-nav #updates-count {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 body:not([data-st-theme="light"]) #sidebar-left .app-link {
@@ -665,7 +665,7 @@ body:not([data-st-theme="light"]) .comment-container textarea {
 }
 
 body:not([data-st-theme="light"]) .comment-container input[type="submit"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
   color: rgba(255, 255, 255, 0.87) !important;
 }
 
@@ -692,7 +692,7 @@ body:not([data-st-theme="light"]) .drop-items .submission-status.late {
 body:not([data-st-theme="light"]) .drop-items .submit-assignment .dropbox-submit {
   color: rgba(255, 255, 255, 0.87) !important;
   background: none !important;
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
   border-color: rgba(255, 255, 255, 0.38) !important;
 }
 
@@ -918,7 +918,7 @@ body:not([data-st-theme="light"]) .popups-box .all-contents tr td input[id="popu
 }
 
 body:not([data-st-theme="light"]) .popups-box input[type="submit"] {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 body:not([data-st-theme="light"]) #ui-datepicker-div {
@@ -967,7 +967,7 @@ body:not([data-st-theme="light"]) div[aria-labelledby="modal-heading"] .RecordTy
 }
 
 body:not([data-st-theme="light"]) div[aria-labelledby="modal-heading"] button {
-  background-color: #f50057 !important;
+  background-color: #1D8487 !important;
 }
 
 body:not([data-st-theme="light"]) #error-page {
@@ -1071,7 +1071,7 @@ body:not([data-st-theme="light"]) ._pendo-launcher_ ._pendo-section-content-body
 }
 
 .st-checkbox-container .st-checkbox:checked ~ .checkmark {
-  background-color: #f50057;
+  background-color: #1D8487;
 }
 
 .st-checkbox-container .checkmark:after {
