@@ -1,9 +1,9 @@
 var upcoming = document.querySelector(".upcoming-events");;
 
 window.onload = async function () {
-    // TODO: Add checkboxes to course homepages 
-    // if (document.body.classList.contains("is-home") ||
-    //     document.body.classList.contains("s-course-materials-has-add-content")) {
+    themeManager();
+
+    // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
         // start observing
         observer.observe(document, {
@@ -122,4 +122,45 @@ function cleanLocalStorage(currentAssignments) {
 
         localStorage.setItem("st-assignments", JSON.stringify(stored));
     }
+}
+
+async function themeManager() {
+    setTheme(await getTheme());
+
+    try {
+        chrome.storage.onChanged.addListener(async function(changes, area) {
+            if (area === "sync" || area  === "local" && "st-theme" in changes) {
+                setTheme(changes["st-theme"].newValue);
+            }
+        });
+    }
+    catch(err) {
+        console.log(err);
+    }
+
+}
+
+async function getTheme() {
+    try {
+        return new Promise((resolve, reject) => {
+            chrome.storage.sync.get(["st-theme"], function(result) {
+                if (result["st-theme"]) {
+                    resolve(result["st-theme"]);
+                }
+                else {
+                    resolve("dark");
+                }
+            });
+        });
+    }
+    catch(err) {
+        console.log(err);
+    }
+
+    return "dark";
+}
+
+function setTheme(theme) {
+    document.documentElement.setAttribute("data-st-theme", theme);
+    document.body.setAttribute("data-st-theme", theme);
 }
