@@ -3,7 +3,7 @@
 
   "name": "Schoology Tweaker",
   "version": "1.0.0",
-  "description": "Development",
+  "description": "Schoology Tweaker adds quality of life changes to Schoology.",
   "browser_action": {
     "default_icon": {
       "16": "images/icon16.png",
