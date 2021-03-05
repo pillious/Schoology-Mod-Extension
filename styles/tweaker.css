@@ -8,6 +8,8 @@ html:not([data-st-theme="light"]) #supplementary {
 
 html:not([data-st-theme="light"]) #supplementary .login-content {
   background-color: #2c2c2c !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 !important;
 }
 
 html:not([data-st-theme="light"]) #supplementary .login-content .sign-in-header {
@@ -15,12 +17,41 @@ html:not([data-st-theme="light"]) #supplementary .login-content .sign-in-header 
 }
 
 html:not([data-st-theme="light"]) #supplementary .login-content #edit-mail,
-html:not([data-st-theme="light"]) #supplementary .login-content #edit-pass {
+html:not([data-st-theme="light"]) #supplementary .login-content #edit-pass,
+html:not([data-st-theme="light"]) #supplementary .login-content #edit-school {
   background-color: #323232 !important;
 }
 
 html:not([data-st-theme="light"]) #supplementary .login-content input[value="Log in"] {
   background-color: #f50057 !important;
+}
+
+html:not([data-st-theme="light"]) #supplementary .login-content .remote-auth-help {
+  color: #000 !important;
+}
+
+html:not([data-st-theme="light"]) #supplementary .qr-code-signin-option {
+  background-color: #242424 !important;
+}
+
+html:not([data-st-theme="light"]) #supplementary .qr-code-signin-option .qr-code-signin-or-block span {
+  background-color: #242424 !important;
+}
+
+html:not([data-st-theme="light"]) #supplementary .qr-code-signin-option .qr-code-signin-or-block .rule {
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+html:not([data-st-theme="light"]) #supplementary .qr-code-signin-option a[aria-label="Button: Scan QR Code"] {
+  background-color: #373737 !important;
+}
+
+html:not([data-st-theme="light"]) .ac_results .ac_even, html:not([data-st-theme="light"]) .ac_results .ac_odd {
+  background-color: #323232 !important;
+}
+
+html:not([data-st-theme="light"]) .ac_results .ac_over {
+  background-color: #3875D7 !important;
 }
 
 html:not([data-st-theme="light"]) * {

@@ -50,19 +50,55 @@ html:not([data-st-theme="light"]) {
 
         .login-content {
             background-color: $E5 !important;
+            margin-bottom: 0 !important;
+            border-radius: 0 !important;
 
             .sign-in-header {
                 color: $primary !important;
             }
 
             #edit-mail,
-            #edit-pass {
+            #edit-pass,
+            #edit-school {
                 background-color: $E7 !important;
             }
 
             input[value="Log in"] {
                 background-color: $secondary !important;
             }
+
+
+            .remote-auth-help {
+                color: #000 !important;
+            }
+        }
+
+        .qr-code-signin-option {
+            background-color: $E3 !important;
+
+            .qr-code-signin-or-block {
+                span {
+                    background-color: $E3 !important;
+                }
+
+                .rule {
+                    border-color: $text-disabled !important;
+                }
+            }
+
+            a[aria-label="Button: Scan QR Code"] {
+                background-color: $E9 !important;
+            }
+        }
+    }
+
+    .ac_results {
+        .ac_even, .ac_odd {
+            background-color: $E7 !important;
+        }
+
+        .ac_over {
+            background-color: #3875D7 !important;
         }
     }
     // End Login 

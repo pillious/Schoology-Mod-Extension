@@ -16,23 +16,28 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="header">
+            <div class="logo-wrapper"><img src="../images/icon32.png" alt="Schoology Tweaker logo" class="logo"></div>
             <div class="title">Schoology Tweaker</div>
         </div>
-        <div class="main">
-            <div class="toggle-title">Set the Theme</div>
-            <div class="toggle-wrapper">
-                <div class="tooltip"><span class="tooltiptext">Light Mode</span><i class="fas fa-sun sun-icon"></i></div>
-                <label class="toggle" for="themeToggle">
-                    <input class="toggle__input" type="checkbox" id="themeToggle">
-                    <div class="toggle__fill"></div>
-                </label>
-                <div class="tooltip"><span class="tooltiptext">Dark Mode</span><i class="fas fa-moon moon-icon"></i></div>
-            </div>
+        <div class="main-wrapper">
+            <div class="main">
+                <div class="toggle-title">Set the Theme</div>
+                <div class="toggle-wrapper">
+                    <div class="tooltip"><span class="tooltiptext">Light Mode</span><i class="fas fa-sun sun-icon"></i></div>
+                    <label class="toggle" for="themeToggle">
+                        <input class="toggle__input" type="checkbox" id="themeToggle" checked>
+                        <div class="toggle__fill"></div>
+                    </label>
+                    <div class="tooltip"><span class="tooltiptext">Dark Mode</span><i class="fas fa-moon moon-icon"></i></div>
+                </div>
 
-            <a href="" class="button4" id="confirm-theme" class="confirm">Confirm</a>
+                <div class="confirm-wrapper">
+                    <a href="" id="confirm-theme" class="confirm">Confirm</a>
+                </div>
+
+            </div>
         </div>
     </div>
 </body>

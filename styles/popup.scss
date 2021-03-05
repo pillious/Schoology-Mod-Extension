@@ -16,151 +16,182 @@ $text-high: rgba(255, 255, 255, 0.87);
 $text-medium: rgba(255, 255, 255, 0.60);
 $text-disabled: rgba(255, 255, 255, 0.38);
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    height: 300px;
+    height: 250px;
     width: 250px;
-    padding: 0.5rem;
     background-color: $E2;
     font-family: 'Inter', sans-serif;
 
 
     div.container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
         div.header {
+            padding: 0.5rem;
+            background-color: $E5;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div.logo-wrapper {
+                padding-right: 8px;
+            } 
+
             div.title {
-                margin: auto;
-                font-size: 24px;
+                font-size: 20px;
                 color: $primary;
             }
         }
 
-        div.main {
+        div.main-wrapper {
+            flex: 1;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-            div.toggle-title {
-                color: $text-high;
-                font-size: 16px;
-            }
-
-            div.toggle-wrapper {
-                width: 100px;
+            div.main {
+                padding: 1rem;
                 display: flex;
-                align-items: center;
-                justify-content: space-between;
+                flex-direction: column;
+                background-color: $E5;
 
+                div.toggle-title {
+                    color: $text-high;
+                    font-size: 16px;
+                    padding-bottom: 0.5rem;
+                }
 
-                .toggle {
-                    $width: 40px;
-                    $height: calc(#{$width} / 2);
-                    $border-radius: calc(#{$height} / 2);
+                div.toggle-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-bottom: 0.5rem;
 
-                    display: inline-block;
-                    cursor: pointer;
+                    .toggle {
+                        $width: 40px;
+                        $height: calc(#{$width} / 2);
+                        $border-radius: calc(#{$height} / 2);
 
-                    .toggle__input {
-                        display: none;
+                        display: inline-block;
+                        cursor: pointer;
 
-                        &:checked~.toggle__fill {
-                            background: #CACACA;
+                        .toggle__input {
+                            display: none;
+
+                            &:checked~.toggle__fill {
+                                background: #CACACA;
+
+                                &::after {
+                                    transform: translateX(#{$height});
+                                }
+                            }
+                        }
+
+                        .toggle__fill {
+                            position: relative;
+                            width: $width;
+                            height: $height;
+                            border-radius: $border-radius;
+                            background: #F9D71C;
+                            transition: background 0.2s;
 
                             &::after {
-                                transform: translateX(#{$height});
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: $height;
+                                width: $height;
+                                background: $text-high;
+                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+                                border-radius: $border-radius;
+                                transition: transform 0.2s;
                             }
                         }
                     }
 
-                    .toggle__fill {
+                    .tooltip {
                         position: relative;
-                        width: $width;
-                        height: $height;
-                        border-radius: $border-radius;
-                        background: #F9D71C;
-                        transition: background 0.2s;
+                        display: inline-block;
+                        border-bottom: 1px dotted black;
 
-                        &::after {
-                            content: "";
+                        .tooltiptext {
+                            visibility: hidden;
+                            width: 120px;
+                            background-color: #555;
+                            color: #fff;
+                            text-align: center;
+                            border-radius: 6px;
+                            padding: 5px 0;
                             position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: $height;
-                            width: $height;
-                            background: $text-high;
-                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-                            border-radius: $border-radius;
-                            transition: transform 0.2s;
-                        }
-                    }
-                }
-
-                .tooltip {
-                    position: relative;
-                    display: inline-block;
-                    border-bottom: 1px dotted black;
-
-                    .tooltiptext {
-                        visibility: hidden;
-                        width: 120px;
-                        background-color: #555;
-                        color: #fff;
-                        text-align: center;
-                        border-radius: 6px;
-                        padding: 5px 0;
-                        position: absolute;
-                        z-index: 1;
-                        bottom: 125%;
-                        left: 50%;
-                        margin-left: -60px;
-                        opacity: 0;
-                        transition: opacity 0.3s;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            top: 100%;
+                            z-index: 1;
+                            bottom: 125%;
                             left: 50%;
-                            margin-left: -5px;
-                            border-width: 5px;
-                            border-style: solid;
-                            border-color: #555 transparent transparent transparent;
+                            margin-left: -60px;
+                            opacity: 0;
+                            transition: opacity 0.3s;
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 100%;
+                                left: 50%;
+                                margin-left: -5px;
+                                border-width: 5px;
+                                border-style: solid;
+                                border-color: #555 transparent transparent transparent;
+                            }
+                        }
+
+                        &:hover .tooltiptext {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+
+                        .sun-icon {
+                            font-size: 24px;
+                            color: #F9D71C;
+                        }
+
+                        .moon-icon {
+                            font-size: 24px;
+                            color: #CACACA;
                         }
                     }
+                }
 
-                    &:hover .tooltiptext {
-                        visibility: visible;
-                        opacity: 1;
-                    }
+                div.confirm-wrapper {
+                    display: flex;
+                    justify-content: center;
 
-                    .sun-icon {
-                        font-size: 24px;
-                        color: #F9D71C;
-                    }
-
-                    .moon-icon {
-                        font-size: 24px;
-                        color: #CACACA;
+                    a.confirm {
+                        width: 65x;
+                        display: inline-block;
+                        padding: 4px 10px;
+                        border: 1px solid $primary;
+                        background-color: $primary;
+                        border-radius: 2rem;
+                        box-sizing: border-box;
+                        text-decoration: none;
+                        font-size: 14px;
+                        color: #000;
+                        text-align: center;
+                        transition: all 0.2s;
+    
+                        &:hover {
+                            border-color: $text-high;
+                        }
                     }
                 }
             }
-
-            a.button4 {
-                width: 60px;
-                display: inline-block;
-                padding: 4px;
-                border: 1px solid $secondary;
-                background-color: $secondary;
-                border-radius: 2rem;
-                box-sizing: border-box;
-                text-decoration: none;
-                color: $text-high;
-                text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-                text-align: center;
-                transition: all 0.2s;
-
-                &:hover {
-                    border-color: rgba(255, 255, 255, 1);
-                }
-            }
-
         }
     }
 }

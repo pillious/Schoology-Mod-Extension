@@ -10,6 +10,7 @@ window.onload = async function() {
     document.getElementById("confirm-theme").addEventListener("click", function(e) {
         e.preventDefault();
         setThemeChromeStorage();
+        window.close();
     });
 }
 
