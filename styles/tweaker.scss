@@ -935,6 +935,20 @@ div.select2-drop {
     }
 }
 
+// assessments
+.assessment-delivery-landing-app {
+    div.full-height {
+        background-color: $E5 !important;
+    }
+
+    div[data-reactid=".0.0.0.4.1"] * {
+        color: $E1 !important;
+
+        button span {
+            color: $text-high !important;
+        }
+    }
+}
 
 // End Assignment
 
