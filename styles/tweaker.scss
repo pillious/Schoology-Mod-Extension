@@ -941,13 +941,148 @@ div.select2-drop {
         background-color: $E5 !important;
     }
 
-    div[data-reactid=".0.0.0.4.1"] * {
-        color: $E1 !important;
+    div[data-reactid=".0.0.0.4.1"]  {
+        background: none;
 
-        button span {
+        & * {
             color: $text-high !important;
         }
     }
+
+    div[data-reactid=".0.0.0.4.2.1.0"] {
+        background-color: $E7 !important;
+
+        div {
+            border-color: $text-disabled !important;
+        }
+    }
+}
+
+.ca-assessment-delivery-take-assessment {
+    background-color: $E1 !important;
+
+    .lrn {
+        background-color: $E1 !important;
+
+        .lrn_selected {
+            background-color: $secondary !important;
+        }
+
+        .lrn-toolbar {
+            background-color: $E2 !important;
+
+            .lrn_btn:hover {
+                background-color: $E9 !important;
+            }
+        }
+
+        .lrn-fileupload-upload-container {
+            background-color: $E2 !important;
+
+            .lrn-fileupload-notifications-outlet {
+                .lrn-notifications-bar {
+                    color: $secondary !important;
+                }
+            }
+        }
+
+        .lrn-toolbar-footer {
+            background-color: $E2 !important;
+        }
+
+        .lrn_btn.item-prev {
+            background-color: $E7 !important;
+            border-color: $E9 !important;
+        }
+
+        .lrn-assess-btn {
+            background-color: $E7 !important;
+            border-color: $E9 !important;
+        }
+    }
+}
+
+.lrn-right-region {
+    .right-wrapper {
+        .btn-label {
+            color: #000 !important;
+        }
+
+        .collapseMenu {
+            color: #000 !important;
+        }
+    }
+}
+
+.review-screen {
+    .panel-content {
+        background-color: $E3 !important;
+
+        .panel-header {
+            background-color: $E3 !important;
+    
+            .lrn-assess-close-review-screen-btn {
+                background-color: $E5 !important;
+            }
+        }
+    
+        .panel-body {
+            background-color: $E3 !important;
+            padding: 0 !important;
+    
+            .items-grid {
+                padding: 15px !important;
+    
+                .item-card {
+                    background-color: $E5 !important;
+                }
+            }
+        }
+
+        .panel-footer {
+            background-color: $E3 !important;
+        }
+    }
+}
+
+.accessibility-panel {
+    .lrn-assess-modal-content {
+        background-color: $E3 !important;
+        border-color: $text-disabled !important;
+
+        label[for="lrn_access-contrast-1-1"] {
+            color: #000 !important;
+        }
+
+        .test-resume {
+            color: #333 !important;
+        }
+    }
+}
+
+#test-pause-dialog {
+    .modal-content {
+        background-color: $E9 !important;
+    }
+}
+
+#test-save-submit {
+    .modal-content {
+        background-color: $E5 !important;
+        border-color: $text-disabled !important;
+
+        .modal-body {
+            border-color: $text-disabled !important; 
+        }
+
+        .test-dialog-cancel {
+            color: #333 !important;
+        }
+    }
+}
+
+.alert.autosave-banner {
+    color: #468847 !important;
 }
 
 // End Assignment
