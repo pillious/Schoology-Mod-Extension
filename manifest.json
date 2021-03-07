@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Schoology Tweaker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Schoology Tweaker adds quality of life changes to Schoology.",
   "browser_action": {
     "default_icon": {
@@ -14,8 +14,8 @@
     "default_popup": "views/popup.html"
   },
   "content_scripts": [{
-      "css": ["styles/tweaker.css"],
-      "js": ["scripts/tweaker.js"],
+      "css": ["styles/tweaker.min.css"],
+      "js": ["scripts/tweaker.min.js"],
       "matches": ["https://schoology.newton.k12.ma.us/*", "https://*.schoology.com/*"],
       "exclude_matches": [
         "https://*.schoology.com/register*",
@@ -35,8 +35,8 @@
       ]
     },
     {
-      "css": ["styles/popup.css", "styles/FontAwesome/css/all.css"],
-      "js": ["scripts/settings.js"],
+      "css": ["styles/popup.min.css", "styles/FontAwesome/css/all.min.css"],
+      "js": ["scripts/settings.min.js"],
       "matches": ["file:///popup.html"]
     }
   ],
