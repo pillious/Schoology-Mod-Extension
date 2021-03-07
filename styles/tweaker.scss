@@ -1,5 +1,6 @@
 // Dark mode styles
 // Login
+// Messages
 // Base styles
 //  - Navbar
 //  - Footer
@@ -35,8 +36,6 @@ $E8: #353535;
 $E9: #373737;
 
 $primary: #84dfe2;
-// https://mycolor.space/?hex=%2384DFE2&sub=1
-// $secondary: #f50057;
 $secondary: #1D8487;
 
 $text-high: rgba(255, 255, 255, 0.87);
@@ -95,7 +94,9 @@ html:not([data-st-theme="light"]) {
     }
 
     .ac_results {
-        .ac_even, .ac_odd {
+
+        .ac_even,
+        .ac_odd {
             background-color: $E7 !important;
         }
 
@@ -104,6 +105,29 @@ html:not([data-st-theme="light"]) {
         }
     }
     // End Login 
+
+    // Messages
+    body.inbox-body-wrapper {
+
+        #body #wrapper #container #center-inner {
+            background-color: $E1 !important;
+
+            textarea {
+                background-color: $E2 !important;
+                border-color: $text-disabled !important;
+            }
+
+            #attachment-selector {
+                background-color: $E2 !important;
+                border-color: $text-disabled !important;
+            }
+
+            .cancel-btn {
+                color: $E1 !important;
+            }
+        }
+    }
+    // End Messages
 
     // Base styles
     * {
@@ -180,11 +204,13 @@ body:not([data-st-theme="light"]) {
             background-color: $E3 !important;
         }
 
-        button[aria-label*="notification"] {
+        button[aria-label*="notification"],
+        button[aria-label*="message"] {
             span {
                 background-color: $secondary !important;
             }
         }
+
 
         // notification bell dropdown menu
         .util-box-shadow-dropdown-2Bl9b {
@@ -245,34 +271,290 @@ body:not([data-st-theme="light"]) {
             }
         }
     }
-// } // End Body dark styles
 
-// End Base styles
+    // End Base styles
 
-// Homepage content
-#main-content-wrapper.clearfix.without-left-nav {
+    // Homepage content
+    #main-content-wrapper.clearfix.without-left-nav {
 
-    #center-inner {
-        background-color: $E0 !important;
-
-        #main {
+        #center-inner {
             background-color: $E0 !important;
 
-            ol {
-                border-bottom-color: $text-high !important;
+            #main {
+                background-color: $E0 !important;
 
-                li.active {
+                ol {
                     border-bottom-color: $text-high !important;
+
+                    li.active {
+                        border-bottom-color: $text-high !important;
+                    }
+                }
+
+                #home-feed-container {
+                    background-color: $E1 !important;
+
+                    #edge-filters {
+
+                        #edge-filters-menu {
+                            background-color: $E1 !important;
+
+                            .active {
+                                background-position: 0 -257px !important;
+                            }
+                        }
+                    }
+
+                    #smart-box {
+                        border-color: $text-disabled !important;
+                    }
+
+                    .feed {
+                        .edge-item {
+                            .edge-sentence {
+                                .update-body * {
+                                    background-color: $E1 !important;
+                                    color: $text-high !important;
+                                    border-color: $text-disabled !important;
+                                }
+
+                                .s-polls-results-overlay {
+                                    background-color: $E9 !important;
+                                }
+                            }
+
+                            .edge-main {
+                                background-color: $E1 !important;
+                                color: $text-high !important;
+                            }
+
+                            .edge-footer {
+                                color: $text-medium !important;
+
+                                .created {
+                                    color: $text-medium !important;
+                                }
+
+                                div.feed-comments {
+                                    background-color: $E2 !important;
+
+                                    div.comment-top {
+                                        .comment-author {
+                                            color: $text-high !important;
+                                        }
+
+                                        .comment-body-wrapper {
+                                            color: $text-high !important;
+                                        }
+                                    }
+
+                                    div.comment-footer {
+                                        span {
+                                            color: $text-medium !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .sgy-card {
+                    background-color: $E2 !important;
+                    border-color: $text-disabled !important;
+
+                    .sgy-card-context {
+                        background-color: $E2 !important;
+                        border-color: $text-disabled !important;
+                    }
+                }
+            }
+        }
+    }
+
+    // End Homepage content
+
+    // Homepage sidebar
+    #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed {
+        background-color: $E0 !important;
+
+        #right-column-inner {
+            // "overdue" section tweak <---
+            // display: flex;
+            // flex-direction: column-reverse;
+
+            #overdue-submissions {
+                background-color: $E1 !important;
+            }
+
+            .upcoming-events {
+                background-color: $E1 !important;
+            }
+        }
+    }
+
+    // End Homepage sidebar
+
+    // Course content
+    #sidebar-left {
+        #left-nav {
+            li.active-trail div a.active {
+                background-color: $E1 !important;
+            }
+
+            #course-materials-dropdown {
+                background-color: $E2 !important;
+
+                .item-list ul li a {
+                    background-color: $E2 !important;
+
+                    &:hover {
+                        background-color: $E5 !important;
+                    }
                 }
             }
 
-            #home-feed-container {
+            #updates-count {
+                background-color: $secondary !important;
+            }
+        }
+
+        // nearpod link
+        .app-link {
+            background-color: $E0 !important;
+        }
+    }
+
+    #main-content-wrapper {
+        background-color: $E1 !important;
+        border-color: $text-disabled !important;
+
+        #center-wrapper {
+            background-color: $E1 !important;
+            border-color: $text-disabled !important;
+
+            #center-top {
                 background-color: $E1 !important;
+                border-color: $text-disabled !important;
+
+                .content-top-upper {
+                    background-color: $E1 !important;
+                }
+
+                .realm-top-right {
+                    a#edit-course-switcher-select-nid-button {
+                        background: $E5 !important;
+
+                        .edit-course-inline-dropdown-arrow {
+                            clip: rect(0, 30px, 610px, 0) !important;
+                            top: -594px !important;
+                        }
+                    }
+
+                    ul#edit-course-switcher-select-nid-menu {
+                        background-color: $E3 !important;
+
+                        li.ui-selectmenu-group {
+                            ul li:hover a {
+                                background-color: $E5 !important;
+                            }
+                        }
+                    }
+
+                    a.notification-settings {
+                        background: $E5 !important;
+                    }
+
+                    div.notif-setting-dropdown {
+                        background-color: $E3 !important;
+                        border-color: $text-disabled !important;
+
+                        label.option:hover {
+                            background-color: $E5 !important;
+                        }
+
+                        a.cancel-btn {
+                            color: #000 !important;
+                        }
+
+
+                    }
+                }
+            }
+
+            #content-wrapper {
+
+                // materials section
+                #course-profile-materials {
+                    background-color: var(--E2) !important;
+                }
+
+                .materials-top {
+                    border-color: $text-disabled !important;
+
+                    .action-links-wrapper {
+                        background-color: $E1 !important;
+
+                        span.action-links-unfold-text {
+                            background: url(/sites/all/themes/schoology_theme/images/arrow-down.png?60391c9360bd4989) no-repeat 5px 50%;
+                            width: auto;
+                            height: auto;
+                            padding: 5px 0 5px 22px;
+                        }
+
+                        .action-links {
+                            background-color: $E2 !important;
+
+                            li {
+                                .selected {
+                                    background-position: 0 -256px !important;
+                                }
+
+                                &:hover {
+                                    background-color: $E5 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #course-profile-materials-folders {
+                    .folder-contents-cell {
+                        border-color: $text-disabled !important;
+                    }
+                }
+
+                // updates section
+                .update-body * {
+                    background-color: $E1 !important;
+                }
+
+                .edge-footer .created * {
+                    color: $text-medium !important;
+                }
+
+                form {
+                    border-color: $text-disabled !important;
+                }
+
+                li {
+                    border-color: $text-disabled !important;
+                }
+
+                .feed-comments {
+                    background-color: $E2 !important;
+                }
 
                 #edge-filters {
+                    background-color: $E1 !important;
+
+                    #edge-filters-btn {
+                        color: $text-high !important;
+                        opacity: 1 !important;
+                    }
 
                     #edge-filters-menu {
-                        background-color: $E1 !important;
+                        background-color: $E2 !important;
 
                         .active {
                             background-position: 0 -257px !important;
@@ -280,1142 +562,898 @@ body:not([data-st-theme="light"]) {
                     }
                 }
 
-                #smart-box {
-                    border-color: $text-disabled !important;
+                #right-column {
+                    background-color: $E1 !important;
+
+                    #event-selector {
+                        border-color: $text-disabled !important;
+                    }
+
+                    h4 {
+                        border-color: $text-disabled !important;
+                    }
                 }
 
-                .feed {
-                    .edge-item {
-                        .edge-sentence {
-                            .update-body * {
-                                background-color: $E1 !important;
-                                color: $text-high !important;
-                                border-color: $text-disabled !important;
-                            }
+                .roster-top {
+                    background: none !important;
+                }
 
-                            .s-polls-results-overlay {
-                                background-color: $E9 !important;
-                            }
-                        }
+                .enrollment-view-nav {
+                    background-color: $E1 !important;
+                }
 
-                        .edge-main {
+                .filter-btn:hover {
+                    background-color: $E9 !important;
+                }
+            }
+
+            .collection-row-empty td {
+                background-color: $E2 !important;
+            }
+
+            .search-results {
+                background-color: $E2 !important;
+            }
+        }
+    }
+
+    .course-list-view.s-enable-course-dashboard.s-hide-left-nav {
+        #main-content-wrapper.clearfix.without-left-nav {
+            #tabs-wrapper {
+                background-color: $E1 !important;
+            }
+
+            #center-wrapper {
+                #center-inner {
+                    background-color: $E1 !important;
+
+                    #main {
+                        background-color: $E1 !important;
+
+                        #main-inner {
                             background-color: $E1 !important;
-                            color: $text-high !important;
+
+                            .course-item {
+                                background-color: $E2 !important;
+                            }
+                        }
+                    }
+
+                    #right-column {
+                        .sgy-course-search-form {
+                            .Select-control {
+                                background-color: $E1 !important;
+
+                                .Select-item {
+                                    background-color: $E9 !important;
+                                }
+                            }
+
+                            div.Select {
+                                .Select-menu-outer {
+                                    * {
+                                        background-color: $E2 !important;
+
+                                        &:hover {
+                                            background-color: $E9 !important;
+                                        }
+                                    }
+                                }
+                            }
                         }
 
-                        .edge-footer {
-                            color: $text-medium !important;
-
-                            .created {
-                                color: $text-medium !important;
-                            }
-
-                            div.feed-comments {
-                                background-color: $E2 !important;
-
-                                div.comment-top {
-                                    .comment-author {
-                                        color: $text-high !important;
-                                    }
-
-                                    .comment-body-wrapper {
-                                        color: $text-high !important;
-                                    }
-                                }
-
-                                div.comment-footer {
-                                    span {
-                                        color: $text-medium !important;
-                                    }
-                                }
-                            }
+                        .sgy-course-search-form__submit-row {
+                            background-color: $E1 !important;
+                            border: none !important;
                         }
                     }
                 }
             }
+        }
+    }
 
-            .sgy-card {
-                background-color: $E2 !important;
-                border-color: $text-disabled !important;
+    // groups
+    .group-list-view.s-enable-course-dashboard.s-hide-left-nav {
+        #main-content-wrapper.clearfix.without-left-nav {
+            #tabs-wrapper {
+                background-color: $E1 !important;
+            }
 
-                .sgy-card-context {
-                    background-color: $E2 !important;
-                    border-color: $text-disabled !important;
+            #center-wrapper {
+                #center-inner {
+                    background-color: $E1 !important;
+
+                    #main {
+                        background-color: $E1 !important;
+
+                        #main-inner {
+                            background-color: $E1 !important;
+                        }
+                    }
+
                 }
             }
         }
     }
-}
 
-// End Homepage content
+    input#s2id_autogen1_search {
+        color: #000 !important;
+    }
 
-// Homepage sidebar
-#main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed {
-    background-color: $E0 !important;
+    li.select2-no-results {
+        background-color: $E2 !important;
+    }
 
-    #right-column-inner {
-        // "overdue" section tweak <---
-        // display: flex;
-        // flex-direction: column-reverse;
+    div[aria-labelledby^="reorder-ui"] {
+        background-color: $E2 !important;
 
-        #overdue-submissions {
-            background-color: $E1 !important;
+        header {
+            background-color: $E2 !important;
         }
 
-        .upcoming-events {
-            background-color: $E1 !important;
+        .Card-card-2rORL {
+            background-color: $E3 !important;
         }
     }
-}
 
-// End Homepage sidebar
+    // End Course content
 
-// Course content
-#sidebar-left {
-    #left-nav {
-        li.active-trail div a.active {
+    // Resources
+    #library-wrapper {
+        background-color: $E1 !important;
+        border-color: $text-disabled !important;
+
+        div {
             background-color: $E1 !important;
+            border-color: $text-disabled !important;
+
+            .library-collection a[href="/resources"] {
+                background-color: $E2 !important;
+            }
         }
 
-        #course-materials-dropdown {
-            background-color: $E2 !important;
+        span.action-links-unfold-text {
+            color: #000 !important;
+        }
 
-            .item-list ul li a {
-                background-color: $E2 !important;
+        div.action-links-unfold.active span {
+            color: $text-high !important;
+        }
+
+        ul.action-links {
+            background-color: $E2 !important;
+        }
+
+        #library-left-nav {
+            a {
+                &.active {
+                    background-color: $E5 !important;
+                }
 
                 &:hover {
                     background-color: $E5 !important;
                 }
             }
-        }
 
-        #updates-count {
-            background-color: $secondary !important;
         }
     }
 
-    // nearpod link
-    .app-link {
-        background-color: $E0 !important;
-    }
-}
+    // End Resources
 
-#main-content-wrapper {
-    background-color: $E1 !important;
-    border-color: $text-disabled !important;
+    // Grades
+    #main {
+        padding-bottom: 0 !important;
 
-    #center-wrapper {
-        background-color: $E1 !important;
-        border-color: $text-disabled !important;
+        div#main-inner {
 
-        #center-top {
-            background-color: $E1 !important;
-            border-color: $text-disabled !important;
-
-            .content-top-upper {
+            // gradebook
+            .gradebook-course {
                 background-color: $E1 !important;
-            }
-
-            .realm-top-right {
-                a#edit-course-switcher-select-nid-button {
-                    background: $E5 !important;
-
-                    .edit-course-inline-dropdown-arrow {
-                        clip: rect(0, 30px, 610px, 0) !important;
-                        top: -594px !important;
-                    }
-                }
-
-                ul#edit-course-switcher-select-nid-menu {
-                    background-color: $E3 !important;
-
-                    li.ui-selectmenu-group {
-                        ul li:hover a {
-                            background-color: $E5 !important;
-                        }
-                    }
-                }
-
-                a.notification-settings {
-                    background: $E5 !important;
-                }
-
-                div.notif-setting-dropdown {
-                    background-color: $E3 !important;
-                    border-color: $text-disabled !important;
-
-                    label.option:hover {
-                        background-color: $E5 !important;
-                    }
-
-                    a.cancel-btn {
-                        color: #000 !important;
-                    }
-
-
-                }
-            }
-        }
-
-        #content-wrapper {
-
-            // materials section
-            #course-profile-materials {
-                background-color: var(--E2) !important;
-            }
-
-            .materials-top {
-                border-color: $text-disabled !important;
-
-                .action-links-wrapper {
-                    background-color: $E1 !important;
-
-                    span.action-links-unfold-text {
-                        background: url(/sites/all/themes/schoology_theme/images/arrow-down.png?60391c9360bd4989) no-repeat 5px 50%;
-                        width: auto;
-                        height: auto;
-                        padding: 5px 0 5px 22px;
-                    }
-
-                    .action-links {
-                        background-color: $E2 !important;
-
-                        li {
-                            .selected {
-                                background-position: 0 -256px !important;
-                            }
-
-                            &:hover {
-                                background-color: $E5 !important;
-                            }
-                        }
-                    }
-                }
-            }
-
-            #course-profile-materials-folders {
-                .folder-contents-cell {
-                    border-color: $text-disabled !important;
-                }
-            }
-
-            // updates section
-            .update-body * {
-                background-color: $E1 !important;
-            }
-
-            .edge-footer .created * {
-                color: $text-medium !important;
-            }
-
-            form {
                 border-color: $text-disabled !important;
             }
-
-            li {
-                border-color: $text-disabled !important;
-            }
-
-            .feed-comments {
-                background-color: $E2 !important;
-            }
-
-            #edge-filters {
-                background-color: $E1 !important;
-
-                #edge-filters-btn {
-                    color: $text-high !important;
-                    opacity: 1 !important;
-                }
-
-                #edge-filters-menu {
-                    background-color: $E2 !important;
-
-                    .active {
-                        background-position: 0 -257px !important;
-                    }
-                }
-            }
-
-            #right-column {
-                background-color: $E1 !important;
-
-                #event-selector {
-                    border-color: $text-disabled !important;
-                }
-
-                h4 {
-                    border-color: $text-disabled !important;
-                }
-            }
-
-            .roster-top {
-                background: none !important;
-            }
-
-            .enrollment-view-nav {
-                background-color: $E1 !important;
-            }
-
-            .filter-btn:hover {
-                background-color: $E9 !important;
-            }
-        }
-
-        .collection-row-empty td {
-            background-color: $E2 !important;
-        }
-
-        .search-results {
-            background-color: $E2 !important;
-        }
-    }
-}
-
-.course-list-view.s-enable-course-dashboard.s-hide-left-nav {
-    #main-content-wrapper.clearfix.without-left-nav {
-        #tabs-wrapper {
-            background-color: $E1 !important;
-        }
-
-        #center-wrapper {
-            #center-inner {
-                background-color: $E1 !important;
-
-                #main {
-                    background-color: $E1 !important;
-
-                    #main-inner {
-                        background-color: $E1 !important;
-
-                        .course-item {
-                            background-color: $E2 !important;
-                        }
-                    }
-                }
-
-                #right-column {
-                    .sgy-course-search-form {
-                        .Select-control {
-                            background-color: $E1 !important;
-
-                            .Select-item {
-                                background-color: $E9 !important;
-                            }
-                        }
-
-                        div.Select {
-                            .Select-menu-outer {
-                                * {
-                                    background-color: $E2 !important;
-
-                                    &:hover {
-                                        background-color: $E9 !important;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    .sgy-course-search-form__submit-row {
-                        background-color: $E1 !important;
-                        border: none !important;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// groups
-.group-list-view.s-enable-course-dashboard.s-hide-left-nav {
-    #main-content-wrapper.clearfix.without-left-nav {
-        #tabs-wrapper {
-            background-color: $E1 !important;
-        }
-
-        #center-wrapper {
-            #center-inner {
-                background-color: $E1 !important;
-
-                #main {
-                    background-color: $E1 !important;
-
-                    #main-inner {
-                        background-color: $E1 !important;
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-input#s2id_autogen1_search {
-    color: #000 !important;
-}
-
-li.select2-no-results {
-    background-color: $E2 !important;
-}
-
-div[aria-labelledby^="reorder-ui"] {
-    background-color: $E2 !important;
-
-    header {
-        background-color: $E2 !important;
-    }
-
-    .Card-card-2rORL {
-        background-color: $E3 !important;
-    }
-}
-
-// End Course content
-
-// Resources
-#library-wrapper {
-    background-color: $E1 !important;
-    border-color: $text-disabled !important;
-
-    div {
-        background-color: $E1 !important;
-        border-color: $text-disabled !important;
-
-        .library-collection a[href="/resources"] {
-            background-color: $E2 !important;
         }
     }
 
-    span.action-links-unfold-text {
-        color: #000 !important;
-    }
+    .s-slider {
 
-    div.action-links-unfold.active span {
-        color: $text-high !important;
-    }
-
-    ul.action-links {
-        background-color: $E2 !important;
-    }
-
-    #library-left-nav {
-        a {
-            &.active {
-                background-color: $E5 !important;
-            }
-
-            &:hover {
-                background-color: $E5 !important;
-            }
-        }
-
-    }
-}
-
-// End Resources
-
-// Grades
-#main {
-    padding-bottom: 0 !important;
-
-    div#main-inner {
-
-        // gradebook
-        .gradebook-course {
-            background-color: $E1 !important;
+        th,
+        td {
             border-color: $text-disabled !important;
         }
-    }
-}
 
-.s-slider {
-
-    th,
-    td {
-        border-color: $text-disabled !important;
-    }
-
-    .right-column {
-        background: none !important;
-        background-color: $E5 !important;
-    }
-
-    .bottom {
-        background: none !important;
-        background-color: $E5 !important;
-    }
-
-    td.selected {
-        .input-bottom {
-            color: #000 !important;
-        }
-    }
-}
-
-// mastery
-.summary-course {
-    background-color: $E2 !important;
-    border-color: $text-disabled !important;
-}
-
-#s-js-student-mastery-report-view-content {
-    background-color: $E1 !important;
-}
-
-#content-wrapper {
-    background-color: $E1 !important;
-}
-
-.master-course-switcher-row {
-    background-color: $E1 !important;
-}
-
-div.select2-drop {
-    background-color: $E2 !important;
-}
-
-// End Grades
-
-// Calendar
-#fcalendar {
-    background-color: $E1 !important;
-
-    .fc-header {
-        span[role="button"] {
+        .right-column {
             background: none !important;
-            background-color: $E1 !important;
-
-            &.fc-state-active {
-                border-color: $primary !important;
-            }
-        }
-    }
-
-    .fc-event {
-        background-color: $E6 !important;
-    }
-
-    .fcalendar-filter-menu-wrapper {
-        background-color: $E2 !important;
-    }
-}
-
-.share-calendar-option {
-    background-color: $E1 !important;
-}
-
-// End Calendar
-
-// Assignment
-#center-top {
-    border-color: $text-disabled !important;
-
-    .content-top-upper {
-        border-color: $text-disabled !important;
-    }
-
-    .info-container {
-        .grading-info {
-            background-color: $E2 !important;
-        }
-    }
-
-}
-
-#main {
-    #main-inner {
-        .assignment-details {
-            border-color: $text-disabled !important;
-        }
-
-        table,
-        thead,
-        tr,
-        td,
-        th {
-            background-color: $E2 !important;
-        }
-    }
-}
-
-.comment-container {
-    textarea {
-        background-color: $E2 !important;
-    }
-
-    input[type="submit"] {
-        background-color: $secondary !important;
-        color: $text-high !important;
-    }
-
-    .comment-contents-container {
-        .comment {
-            border-color: $text-disabled !important;
-        }
-    }
-}
-
-.drop-items {
-    h3 {
-        border-color: $text-disabled !important;
-    }
-
-    li:hover {
-        background-color: $E5 !important;
-    }
-
-    .submission-status {
-        &.ontime {
-            color: #38852C !important;
-        }
-
-        &.late {
-            color: #DD373A !important;
-        }
-    }
-
-    .submit-assignment {
-        .dropbox-submit {
-            color: $text-high !important;
-            background: none !important;
-            background-color: $secondary !important;
-            border-color: $text-disabled !important;
-        }
-    }
-}
-
-.course-materials-left-menu {
-    background-color: $E1 !important;
-}
-
-.messages {
-    .message-text {
-        background-color: #e3ffd8 !important;
-        color: #000 !important;
-    }
-
-    .status .messages-close-btn {
-        color: #9DD684 !important;
-    }
-}
-
-.messages.error {
-    .messages-container {
-        tbody tr td {
-            background-color: #ffe5e5 !important;
-        }
-
-        .message-text {
-            background-color: #ffe5e5 !important;
-        }
-    }
-
-}
-
-.progressContainer {
-    background-color: $E5 !important;
-}
-
-// embedded google docs assignment
-.profile-container-4015500229 {
-    background-color: $E1 !important;
-
-    .profile-header-2536997237 {
-        background-color: $E0 !important;
-
-        .layout-row-inner-3835588998 {
-            background-color: $E1 !important;
-        }
-
-    }
-
-    .content-box-container-3232021855 {
-        background-color: $E2 !important;
-    }
-}
-
-// assessments
-.assessment-delivery-landing-app {
-    div.full-height {
-        background-color: $E5 !important;
-    }
-
-    div[data-reactid=".0.0.0.4.1"]  {
-        background: none;
-
-        & * {
-            color: $text-high !important;
-        }
-    }
-
-    div[data-reactid=".0.0.0.4.2.1.0"] {
-        background-color: $E7 !important;
-
-        div {
-            border-color: $text-disabled !important;
-        }
-    }
-}
-
-.ca-assessment-delivery-take-assessment {
-    background-color: $E1 !important;
-
-    .lrn {
-        background-color: $E1 !important;
-
-        .lrn_selected {
-            background-color: $secondary !important;
-        }
-
-        .lrn-toolbar {
-            background-color: $E2 !important;
-
-            .lrn_btn:hover {
-                background-color: $E9 !important;
-            }
-        }
-
-        .lrn-fileupload-upload-container {
-            background-color: $E2 !important;
-
-            .lrn-fileupload-notifications-outlet {
-                .lrn-notifications-bar {
-                    color: $secondary !important;
-                }
-            }
-        }
-
-        .lrn-toolbar-footer {
-            background-color: $E2 !important;
-        }
-
-        .lrn_btn.item-prev {
-            background-color: $E7 !important;
-            border-color: $E9 !important;
-        }
-
-        .lrn-assess-btn {
-            background-color: $E7 !important;
-            border-color: $E9 !important;
-        }
-    }
-}
-
-.lrn-right-region {
-    .right-wrapper {
-        .btn-label {
-            color: #000 !important;
-        }
-
-        .collapseMenu {
-            color: #000 !important;
-        }
-    }
-}
-
-.review-screen {
-    .panel-content {
-        background-color: $E3 !important;
-
-        .panel-header {
-            background-color: $E3 !important;
-    
-            .lrn-assess-close-review-screen-btn {
-                background-color: $E5 !important;
-            }
-        }
-    
-        .panel-body {
-            background-color: $E3 !important;
-            padding: 0 !important;
-    
-            .items-grid {
-                padding: 15px !important;
-    
-                .item-card {
-                    background-color: $E5 !important;
-                }
-            }
-        }
-
-        .panel-footer {
-            background-color: $E3 !important;
-        }
-    }
-}
-
-.accessibility-panel {
-    .lrn-assess-modal-content {
-        background-color: $E3 !important;
-        border-color: $text-disabled !important;
-
-        label[for="lrn_access-contrast-1-1"] {
-            color: #000 !important;
-        }
-
-        .test-resume {
-            color: #333 !important;
-        }
-    }
-}
-
-#test-pause-dialog {
-    .modal-content {
-        background-color: $E9 !important;
-    }
-}
-
-#test-save-submit {
-    .modal-content {
-        background-color: $E5 !important;
-        border-color: $text-disabled !important;
-
-        .modal-body {
-            border-color: $text-disabled !important; 
-        }
-
-        .test-dialog-cancel {
-            color: #333 !important;
-        }
-    }
-}
-
-.alert.autosave-banner {
-    color: #468847 !important;
-}
-
-// End Assignment
-
-// Settings
-#center-top {
-    background: none !important;
-}
-
-#tabs-wrapper {
-    .tabs {
-        background: none !important;
-        background-color: $E1 !important;
-
-        li div a {
-            background: none !important;
-            background-color: $E2 !important;
-        }
-    }
-}
-
-.ui-selectmenu-status {
-    background: none !important;
-    background-color: $E3 !important;
-}
-
-.cellphone-container {
-    background-color: $E2 !important;
-}
-
-// End Settings
-
-// Profile
-.portfolio-list {
-    background-color: $E3 !important;
-
-    .portfolio-list__add-new {
-        background-color: $E3 !important;
-    }
-
-    .portfolio-card,
-    .portfolio-card__bottom,
-    .portfolio-card__toolbar {
-        background-color: $E4 !important;
-    }
-}
-
-.portfolio-route-content {
-    background-color: $E3 !important;
-}
-
-.portfolio-view {
-    .portfolio-title-bar {
-        background-color: $E2 !important;
-
-        input[name="title"] {
-            background-color: $E2 !important;
-        }
-    }
-
-    .portfolio-view__content {
-        background-color: $E2 !important;
-
-        .item-card__bottom {
-            background-color: $E3 !important;
-        }
-    }
-}
-
-// End Profile
-
-// Discussions
-.discussion-view {
-    .page-title {
-        background-color: $E2 !important;
-        border-color: $text-disabled !important;
-    }
-
-    #content-wrapper {
-        border-color: $text-disabled !important;
-
-        .discussion-content {
-            border-color: $text-disabled !important;
-
-            .s-comments-post-form {
-                background-color: $E3 !important;
-            }
-
-            .discussion-action-bar {
-                background-color: $E3 !important;
-                border-color: $text-disabled !important;
-            }
-
-            #s_comments .discussion-card {
-                background-color: $E2 !important;
-                box-shadow: none !important;
-
-                p {
-                    background-color: $E3 !important;
-
-                    span {
-                        background-color: $E3 !important;
-                    }
-                }
-            }
-
-            .expander-bar {
-                background-color: $E3 !important;
-                border-color: $text-disabled !important;
-            }
-
-            .comment {
-                border-color: $text-disabled !important;
-            }
-
-            .s_comments_level {
-                background-color: $E3 !important;
-                border-color: $text-disabled !important;
-            }
-        }
-    }
-
-    #comment-placeholder {
-        background-color: $E5 !important;
-    }
-}
-
-// End Discussions
-
-// Tests 
-#s-assessment-view-submission-form {
-    .selected {
-        span.option-span {
-            background-color: $E9 !important;
-        }
-    }
-}
-
-.cc-tags {
-    .param-val .term-item-tags {
-        .term-item-tag {
-            background: none !important;
-        }
-    }
-}
-
-// End Tests
-
-// Popups
-.popups-box {
-    .popups-title {
-        background-color: $E4 !important;
-    }
-
-    .popups-body {
-        background-color: $E5 !important;
-
-        input,
-        label,
-        fieldset,
-        span[role="button"],
-        textarea,
-        .browser-realm-checkboxes,
-        .popups-tab {
-            background-color: $E8 !important;
-        }
-
-        select {
-            background-color: $E8 !important;
-
-            option {
-                background-color: $E8 !important;
-            }
-        }
-
-        .sEventCalendarImportProcessed {
             background-color: $E5 !important;
         }
 
-        .dropbox-viewer-submission-activity,
-        #dropbox-viewer-right-toggle,
-        #dropbox-viewer-right,
-        #dropbox-viewer-comments,
-        .comment {
-            background-color: $E2 !important;
-            border-color: $text-disabled !important;
+        .bottom {
+            background: none !important;
+            background-color: $E5 !important;
+        }
+
+        td.selected {
+            .input-bottom {
+                color: #000 !important;
+            }
         }
     }
 
-    .submit-buttons,
-    .popups-buttons-inner,
-    .popups-tabs,
-    #resources-left-menu-wrapper,
-    .all-contents tr td {
-        background: none !important;
-        background-color: $E4 !important;
-
-        a,
-        input[id="popup_close"] {
-            color: #808080 !important;
-        }
-    }
-
-    input[type="submit"] {
-        background-color: $secondary !important;
-    }
-}
-
-#ui-datepicker-div {
-    background-color: $E6 !important;
-
-    .ui-datepicker-prev a {
-        background-color: #bbbbbb;
-    }
-
-    .ui-datepicker-new-month {
-        background-color: $E6 !important;
-    }
-
-    .ui-datepicker-new-year {
-        background-color: $E6 !important;
-    }
-
-    .ui-datepicker-next a {
-        background-color: #bbbbbb;
-    }
-
-    .ui-datepicker-days-cell {
-        background-color: $E7 !important;
+    // mastery
+    .summary-course {
+        background-color: $E2 !important;
         border-color: $text-disabled !important;
-
-        a {
-            background-color: $E7 !important;
-        }
-    }
-}
-
-.popover-content {
-    background-color: $E3 !important;
-}
-
-div[aria-labelledby="modal-heading"] {
-    background-color: $E4 !important;
-
-    .RecordTypeCard-card-wrapper-2AQUq {
-        background-color: $E6 !important;
     }
 
-    .RecordTypeCard-card-AjKIG {
-        background-color: $E6 !important;
+    #s-js-student-mastery-report-view-content {
+        background-color: $E1 !important;
     }
 
-    button {
-        background-color: $secondary !important;
-    }
-}
-
-#error-page {
-    background-color: $E2 !important;
-}
-
-// End Popups
-
-// Submission textboxes
-.mceToolbar {
-    background-color: $E6 !important;
-
-    *:not(.mceColorPreview) {
-        background-color: $E6 !important;
+    #content-wrapper {
+        background-color: $E1 !important;
     }
 
-    .mceMenu {
+    .master-course-switcher-row {
+        background-color: $E1 !important;
+    }
+
+    div.select2-drop {
         background-color: $E2 !important;
     }
 
-    td a.mceButtonActive {
-        color: $primary !important;
+    // End Grades
+
+    // Calendar
+    #fcalendar {
+        background-color: $E1 !important;
+
+        .fc-header {
+            span[role="button"] {
+                background: none !important;
+                background-color: $E1 !important;
+
+                &.fc-state-active {
+                    border-color: $primary !important;
+                }
+            }
+        }
+
+        .fc-event {
+            background-color: $E6 !important;
+        }
+
+        .fcalendar-filter-menu-wrapper {
+            background-color: $E2 !important;
+        }
     }
-}
 
-.mceMenuItem a:hover {
-    background-color: $E9 !important;
-}
-
-// End Submission textboxes
-
-// Schoology helper
-._pendo-launcher_ {
-    a {
-        color: #4479B3 !important;
+    .share-calendar-option {
+        background-color: $E1 !important;
     }
 
-    ._pendo-launcher-title_,
-    ._pendo-launcher-section-title_ {
-        color: #666666 !important;
+    // End Calendar
+
+    // Assignment
+    #center-top {
+        border-color: $text-disabled !important;
+
+        .content-top-upper {
+            border-color: $text-disabled !important;
+        }
+
+        .info-container {
+            .grading-info {
+                background-color: $E2 !important;
+            }
+        }
+
     }
 
-    ._pendo-launcher-menu_ {
-        ._pendo-launcher-menu-item-button_ {
-            ._pendo-launcher-menu-item-title_ {
-                color: #0677da !important;
+    #main {
+        #main-inner {
+            .assignment-details {
+                border-color: $text-disabled !important;
             }
 
-            ._pendo-launcher-menu-item-description_ {
+            table,
+            thead,
+            tr,
+            td,
+            th {
+                background-color: $E2 !important;
+            }
+        }
+    }
+
+    .comment-container {
+        textarea {
+            background-color: $E2 !important;
+        }
+
+        input[type="submit"] {
+            background-color: $secondary !important;
+            color: $text-high !important;
+        }
+
+        .comment-contents-container {
+            .comment {
+                border-color: $text-disabled !important;
+            }
+        }
+    }
+
+    .drop-items {
+        h3 {
+            border-color: $text-disabled !important;
+        }
+
+        li:hover {
+            background-color: $E5 !important;
+        }
+
+        .submission-status {
+            &.ontime {
+                color: #38852C !important;
+            }
+
+            &.late {
+                color: #DD373A !important;
+            }
+        }
+
+        .submit-assignment {
+            .dropbox-submit {
+                color: $text-high !important;
+                background: none !important;
+                background-color: $secondary !important;
+                border-color: $text-disabled !important;
+            }
+        }
+    }
+
+    .course-materials-left-menu {
+        background-color: $E1 !important;
+    }
+
+    .messages {
+        .message-text {
+            background-color: #e3ffd8 !important;
+            color: #000 !important;
+        }
+
+        .status .messages-close-btn {
+            color: #9DD684 !important;
+        }
+    }
+
+    .messages.error {
+        .messages-container {
+            tbody tr td {
+                background-color: #ffe5e5 !important;
+            }
+
+            .message-text {
+                background-color: #ffe5e5 !important;
+            }
+        }
+
+    }
+
+    .progressContainer {
+        background-color: $E5 !important;
+    }
+
+    // embedded google docs assignment
+    .profile-container-4015500229 {
+        background-color: $E1 !important;
+
+        .profile-header-2536997237 {
+            background-color: $E0 !important;
+
+            .layout-row-inner-3835588998 {
+                background-color: $E1 !important;
+            }
+
+        }
+
+        .content-box-container-3232021855 {
+            background-color: $E2 !important;
+        }
+    }
+
+    // assessments
+    .assessment-delivery-landing-app {
+        div.full-height {
+            background-color: $E5 !important;
+        }
+
+        div[data-reactid=".0.0.0.4.1"] {
+            background: none;
+
+            & * {
+                color: $text-high !important;
+            }
+        }
+
+        div[data-reactid=".0.0.0.4.2.1.0"] {
+            background-color: $E7 !important;
+
+            div {
+                border-color: $text-disabled !important;
+            }
+        }
+    }
+
+    .ca-assessment-delivery-take-assessment {
+        background-color: $E1 !important;
+
+        .lrn {
+            background-color: $E1 !important;
+
+            .lrn_selected {
+                background-color: $secondary !important;
+            }
+
+            .lrn-toolbar {
+                background-color: $E2 !important;
+
+                .lrn_btn:hover {
+                    background-color: $E9 !important;
+                }
+            }
+
+            .lrn-fileupload-upload-container {
+                background-color: $E2 !important;
+
+                .lrn-fileupload-notifications-outlet {
+                    .lrn-notifications-bar {
+                        color: $secondary !important;
+                    }
+                }
+            }
+
+            .lrn-toolbar-footer {
+                background-color: $E2 !important;
+            }
+
+            .lrn_btn.item-prev {
+                background-color: $E7 !important;
+                border-color: $E9 !important;
+            }
+
+            .lrn-assess-btn {
+                background-color: $E7 !important;
+                border-color: $E9 !important;
+            }
+        }
+    }
+
+    .lrn-right-region {
+        .right-wrapper {
+            .btn-label {
+                color: #000 !important;
+            }
+
+            .collapseMenu {
+                color: #000 !important;
+            }
+        }
+    }
+
+    .review-screen {
+        .panel-content {
+            background-color: $E3 !important;
+
+            .panel-header {
+                background-color: $E3 !important;
+
+                .lrn-assess-close-review-screen-btn {
+                    background-color: $E5 !important;
+                }
+            }
+
+            .panel-body {
+                background-color: $E3 !important;
+                padding: 0 !important;
+
+                .items-grid {
+                    padding: 15px !important;
+
+                    .item-card {
+                        background-color: $E5 !important;
+                    }
+                }
+            }
+
+            .panel-footer {
+                background-color: $E3 !important;
+            }
+        }
+    }
+
+    .accessibility-panel {
+        .lrn-assess-modal-content {
+            background-color: $E3 !important;
+            border-color: $text-disabled !important;
+
+            label[for="lrn_access-contrast-1-1"] {
+                color: #000 !important;
+            }
+
+            .test-resume {
+                color: #333 !important;
+            }
+        }
+    }
+
+    #test-pause-dialog {
+        .modal-content {
+            background-color: $E9 !important;
+        }
+    }
+
+    #test-save-submit {
+        .modal-content {
+            background-color: $E5 !important;
+            border-color: $text-disabled !important;
+
+            .modal-body {
+                border-color: $text-disabled !important;
+            }
+
+            .test-dialog-cancel {
+                color: #333 !important;
+            }
+        }
+    }
+
+    .alert.autosave-banner {
+        color: #468847 !important;
+    }
+
+    // End Assignment
+
+    // Settings
+    #center-top {
+        background: none !important;
+    }
+
+    #tabs-wrapper {
+        .tabs {
+            background: none !important;
+            background-color: $E1 !important;
+
+            li div a {
+                background: none !important;
+                background-color: $E2 !important;
+            }
+        }
+    }
+
+    .ui-selectmenu-status {
+        background: none !important;
+        background-color: $E3 !important;
+    }
+
+    .cellphone-container {
+        background-color: $E2 !important;
+    }
+
+    // End Settings
+
+    // Profile
+    .portfolio-list {
+        background-color: $E3 !important;
+
+        .portfolio-list__add-new {
+            background-color: $E3 !important;
+        }
+
+        .portfolio-card,
+        .portfolio-card__bottom,
+        .portfolio-card__toolbar {
+            background-color: $E4 !important;
+        }
+    }
+
+    .portfolio-route-content {
+        background-color: $E3 !important;
+    }
+
+    .portfolio-view {
+        .portfolio-title-bar {
+            background-color: $E2 !important;
+
+            input[name="title"] {
+                background-color: $E2 !important;
+            }
+        }
+
+        .portfolio-view__content {
+            background-color: $E2 !important;
+
+            .item-card__bottom {
+                background-color: $E3 !important;
+            }
+        }
+    }
+
+    // End Profile
+
+    // Discussions
+    .discussion-view {
+        .page-title {
+            background-color: $E2 !important;
+            border-color: $text-disabled !important;
+        }
+
+        #content-wrapper {
+            border-color: $text-disabled !important;
+
+            .discussion-content {
+                border-color: $text-disabled !important;
+
+                .s-comments-post-form {
+                    background-color: $E3 !important;
+                }
+
+                .discussion-action-bar {
+                    background-color: $E3 !important;
+                    border-color: $text-disabled !important;
+                }
+
+                #s_comments .discussion-card {
+                    background-color: $E2 !important;
+                    box-shadow: none !important;
+
+                    p {
+                        background-color: $E3 !important;
+
+                        span {
+                            background-color: $E3 !important;
+                        }
+                    }
+                }
+
+                .expander-bar {
+                    background-color: $E3 !important;
+                    border-color: $text-disabled !important;
+                }
+
+                .comment {
+                    border-color: $text-disabled !important;
+                }
+
+                .s_comments_level {
+                    background-color: $E3 !important;
+                    border-color: $text-disabled !important;
+                }
+            }
+        }
+
+        #comment-placeholder {
+            background-color: $E5 !important;
+        }
+    }
+
+    // End Discussions
+
+    // Tests 
+    #s-assessment-view-submission-form {
+        .selected {
+            span.option-span {
+                background-color: $E9 !important;
+            }
+        }
+    }
+
+    .cc-tags {
+        .param-val .term-item-tags {
+            .term-item-tag {
+                background: none !important;
+            }
+        }
+    }
+
+    // End Tests
+
+    // Popups
+    .popups-box {
+        .popups-title {
+            background-color: $E4 !important;
+        }
+
+        .popups-body {
+            background-color: $E5 !important;
+
+            input,
+            label,
+            fieldset,
+            span[role="button"],
+            textarea,
+            .browser-realm-checkboxes,
+            .popups-tab {
+                background-color: $E8 !important;
+            }
+
+            select {
+                background-color: $E8 !important;
+
+                option {
+                    background-color: $E8 !important;
+                }
+            }
+
+            .sEventCalendarImportProcessed {
+                background-color: $E5 !important;
+            }
+
+            .dropbox-viewer-submission-activity,
+            #dropbox-viewer-right-toggle,
+            #dropbox-viewer-right,
+            #dropbox-viewer-comments,
+            .comment {
+                background-color: $E2 !important;
+                border-color: $text-disabled !important;
+            }
+        }
+
+        .submit-buttons,
+        .popups-buttons-inner,
+        .popups-tabs,
+        #resources-left-menu-wrapper,
+        .all-contents tr td {
+            background: none !important;
+            background-color: $E4 !important;
+
+            a,
+            input[id="popup_close"] {
+                color: #808080 !important;
+            }
+        }
+
+        input[type="submit"] {
+            background-color: $secondary !important;
+        }
+    }
+
+    #ui-datepicker-div {
+        background-color: $E6 !important;
+
+        .ui-datepicker-prev a {
+            background-color: #bbbbbb;
+        }
+
+        .ui-datepicker-new-month {
+            background-color: $E6 !important;
+        }
+
+        .ui-datepicker-new-year {
+            background-color: $E6 !important;
+        }
+
+        .ui-datepicker-next a {
+            background-color: #bbbbbb;
+        }
+
+        .ui-datepicker-days-cell {
+            background-color: $E7 !important;
+            border-color: $text-disabled !important;
+
+            a {
+                background-color: $E7 !important;
+            }
+        }
+    }
+
+    .popover-content {
+        background-color: $E3 !important;
+    }
+
+    div[aria-labelledby="modal-heading"] {
+        background-color: $E4 !important;
+
+        .RecordTypeCard-card-wrapper-2AQUq {
+            background-color: $E6 !important;
+        }
+
+        .RecordTypeCard-card-AjKIG {
+            background-color: $E6 !important;
+        }
+
+        button {
+            background-color: $E4 !important;
+        }
+    }
+
+    .single-user {
+        background-color: $E8 !important;
+    }
+
+    #attachment-selector {
+        background-color: $E8 !important;
+    }
+
+    .cancel-btn {
+        color: $E1 !important;
+    }
+
+    #error-page {
+        background-color: $E2 !important;
+    }
+
+    // End Popups
+
+    // Submission textboxes
+    .mceToolbar {
+        background-color: $E6 !important;
+
+        *:not(.mceColorPreview) {
+            background-color: $E6 !important;
+        }
+
+        .mceMenu {
+            background-color: $E2 !important;
+        }
+
+        td a.mceButtonActive {
+            color: $primary !important;
+        }
+    }
+
+    .mceMenuItem a:hover {
+        background-color: $E9 !important;
+    }
+
+    // End Submission textboxes
+
+    // Schoology helper
+    ._pendo-launcher_ {
+        a {
+            color: #4479B3 !important;
+        }
+
+        ._pendo-launcher-title_,
+        ._pendo-launcher-section-title_ {
+            color: #666666 !important;
+        }
+
+        ._pendo-launcher-menu_ {
+            ._pendo-launcher-menu-item-button_ {
+                ._pendo-launcher-menu-item-title_ {
+                    color: #0677da !important;
+                }
+
+                ._pendo-launcher-menu-item-description_ {
+                    color: #666666 !important;
+                }
+            }
+        }
+
+        #_pendo-launcher-kb-search-input_ {
+            background-color: #fff !important;
+            color: #666666 !important;
+        }
+
+        #_pendo-section-content-helpcenter-article-frame_ {
+            & * {
+                color: #666666 !important;
+            }
+
+            & a {
+                color: #4479B3 !important;
+            }
+        }
+
+        ._pendo-section-content-body-results_ {
+
+            ._pendo-section-content-search-header_,
+            ._pendo-section-content-search-empty_ * {
                 color: #666666 !important;
             }
         }
     }
 
-    #_pendo-launcher-kb-search-input_ {
-        background-color: #fff !important;
-        color: #666666 !important;
-    }
-
-    #_pendo-section-content-helpcenter-article-frame_ {
-        & * {
-            color: #666666 !important;
-        }
-
-        & a {
-            color: #4479B3 !important;
-        }
-    }
-
-    ._pendo-section-content-body-results_ {
-
-        ._pendo-section-content-search-header_,
-        ._pendo-section-content-search-empty_ * {
-            color: #666666 !important;
-        }
-    }
-}
-// End Schoology Helper
+    // End Schoology Helper
 }
 
 // Assignment checkboxes

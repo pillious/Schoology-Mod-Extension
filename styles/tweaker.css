@@ -46,12 +46,31 @@ html:not([data-st-theme="light"]) #supplementary .qr-code-signin-option a[aria-l
   background-color: #373737 !important;
 }
 
-html:not([data-st-theme="light"]) .ac_results .ac_even, html:not([data-st-theme="light"]) .ac_results .ac_odd {
+html:not([data-st-theme="light"]) .ac_results .ac_even,
+html:not([data-st-theme="light"]) .ac_results .ac_odd {
   background-color: #323232 !important;
 }
 
 html:not([data-st-theme="light"]) .ac_results .ac_over {
   background-color: #3875D7 !important;
+}
+
+html:not([data-st-theme="light"]) body.inbox-body-wrapper #body #wrapper #container #center-inner {
+  background-color: #1d1d1d !important;
+}
+
+html:not([data-st-theme="light"]) body.inbox-body-wrapper #body #wrapper #container #center-inner textarea {
+  background-color: #212121 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+html:not([data-st-theme="light"]) body.inbox-body-wrapper #body #wrapper #container #center-inner #attachment-selector {
+  background-color: #212121 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+html:not([data-st-theme="light"]) body.inbox-body-wrapper #body #wrapper #container #center-inner .cancel-btn {
+  color: #1d1d1d !important;
 }
 
 html:not([data-st-theme="light"]) * {
@@ -127,7 +146,8 @@ body:not([data-st-theme="light"]) header input[placeholder="Search"] {
   background-color: #242424 !important;
 }
 
-body:not([data-st-theme="light"]) header button[aria-label*="notification"] span {
+body:not([data-st-theme="light"]) header button[aria-label*="notification"] span,
+body:not([data-st-theme="light"]) header button[aria-label*="message"] span {
   background-color: #1D8487 !important;
 }
 
@@ -1100,7 +1120,19 @@ body:not([data-st-theme="light"]) div[aria-labelledby="modal-heading"] .RecordTy
 }
 
 body:not([data-st-theme="light"]) div[aria-labelledby="modal-heading"] button {
-  background-color: #1D8487 !important;
+  background-color: #272727 !important;
+}
+
+body:not([data-st-theme="light"]) .single-user {
+  background-color: #353535 !important;
+}
+
+body:not([data-st-theme="light"]) #attachment-selector {
+  background-color: #353535 !important;
+}
+
+body:not([data-st-theme="light"]) .cancel-btn {
+  color: #1d1d1d !important;
 }
 
 body:not([data-st-theme="light"]) #error-page {
