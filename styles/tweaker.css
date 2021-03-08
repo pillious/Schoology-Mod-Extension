@@ -284,10 +284,16 @@ body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content
 
 body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed #right-column-inner #overdue-submissions {
   background-color: #1d1d1d !important;
+  position: relative;
 }
 
 body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed #right-column-inner .upcoming-events {
   background-color: #1d1d1d !important;
+  position: relative;
+}
+
+body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed #right-column-inner h3 {
+  padding-left: 20px;
 }
 
 body:not([data-st-theme="light"]) #sidebar-left #left-nav li.active-trail div a.active {
@@ -1268,5 +1274,18 @@ body:not([data-st-theme="light"]) ._pendo-launcher_ ._pendo-section-content-body
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
+}
+
+.st-icon-collapse {
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  -webkit-transform: translateY(14px);
+          transform: translateY(14px);
+  cursor: pointer;
+}
+
+.st-assignments-collapsed {
+  display: none !important;
 }
 /*# sourceMappingURL=tweaker.css.map */

@@ -379,16 +379,18 @@ body:not([data-st-theme="light"]) {
         background-color: $E0 !important;
 
         #right-column-inner {
-            // "overdue" section tweak <---
-            // display: flex;
-            // flex-direction: column-reverse;
-
             #overdue-submissions {
                 background-color: $E1 !important;
+                position: relative;
             }
 
             .upcoming-events {
                 background-color: $E1 !important;
+                position: relative;
+            }
+
+            h3 {
+                padding-left: 20px;
             }
         }
     }
@@ -1527,4 +1529,15 @@ body:not([data-st-theme="light"]) {
     flex-direction: column-reverse;
 }
 
+.st-icon-collapse {
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    transform: translateY(14px);
+    cursor: pointer;
+}
+
+.st-assignments-collapsed {
+    display: none !important;
+}
 // End Sidebar tweak

@@ -1,4 +1,5 @@
-var upcoming = document.querySelector(".upcoming-events");;
+var upcoming = document.querySelector(".upcoming-events");
+var overdue = document.querySelector("#overdue-submissions");
 
 window.onload = async function () {
     themeManager();
@@ -17,12 +18,15 @@ window.onload = async function () {
 var observer = new MutationObserver(function (mutations, me) {
     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
     if (upcoming) {
+        createSidebarCollapse(upcoming, "upcoming");
+        createSidebarCollapse(overdue, "overdue");
+
         let assignments = upcoming.querySelectorAll("a[href*=assignment]");
         let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
 
         if (assignments) {
             if (document.body.classList.contains("is-home")) {
-                cleanLocalStorage(assignments, dueDates);
+                cleanLocalStorageAssignments(assignments, dueDates);
             }
             appendCheckboxes(assignments, dueDates);
             me.disconnect();
@@ -108,7 +112,7 @@ function getStoredAssignments() {
 }
 
 // remove assignment from local storage if past due date.
-function cleanLocalStorage(currentAssignments) {
+function cleanLocalStorageAssignments(currentAssignments) {
     let stored = getStoredAssignments();
 
     if (stored && stored.data.length > 0) {
@@ -163,4 +167,59 @@ async function getTheme() {
 function setTheme(theme) {
     document.documentElement.setAttribute("data-st-theme", theme);
     document.body.setAttribute("data-st-theme", theme);
+}
+
+function createSidebarCollapse(elem, name) {
+    let icon = document.createElement("i");
+
+    let states = getCollapseStates();
+    if (states) {
+        if (states.data[name]) {
+            icon.className = "fas fa-chevron-right st-icon-collapse";
+            icon.setAttribute("data-is-collapsed", true);
+
+            let assignmentList = elem.querySelector(".upcoming-list");
+            assignmentList.classList.toggle("st-assignments-collapsed");
+        }
+        else {
+            icon.className = "fas fa-chevron-down st-icon-collapse";
+            icon.setAttribute("data-is-collapsed", false);
+        }
+    }
+    else {
+        icon.className = "fas fa-chevron-down st-icon-collapse";
+        icon.setAttribute("data-is-collapsed", false);
+    }
+    
+    icon.addEventListener("click", function() {
+        handleCollapseToggle(this, name);   
+    });
+
+    elem.insertBefore(icon, elem.firstChild);
+}
+
+function handleCollapseToggle(elem, name) {
+    elem.classList.toggle("fa-chevron-right");
+    elem.classList.toggle("fa-chevron-down");
+
+    let assignmentList = elem.parentElement.querySelector(".upcoming-list");
+    assignmentList.classList.toggle("st-assignments-collapsed");
+
+    elem.setAttribute("data-is-collapsed", elem.dataset["isCollapsed"] === "true" ? false : true);
+    saveCollapseState(name, elem.dataset["isCollapsed"] === "true" ? true : false);
+}
+
+function saveCollapseState(name, isCollapsed) {
+    let states = getCollapseStates();
+
+    if (!states) {
+        states = {data: {upcoming: false, overdue: false}};
+    }
+
+    states.data[name] = isCollapsed;
+    localStorage.setItem("st-collapse", JSON.stringify(states));
+}
+
+function getCollapseStates() {
+    return JSON.parse(localStorage.getItem("st-collapse"));
 }
