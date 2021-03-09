@@ -1558,7 +1558,7 @@ body:not([data-st-theme="light"]) {
 
 // Logo overlay
 .st-overlay {
-    z-index: 1;
+    z-index: 500001;
     width: 32px;
     height: 32px;
     position: absolute;

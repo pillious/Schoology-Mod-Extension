@@ -1300,7 +1300,7 @@ body:not([data-st-theme="light"]) ._pendo-launcher_ ._pendo-section-content-body
 }
 
 .st-overlay {
-  z-index: 1;
+  z-index: 500001;
   width: 32px;
   height: 32px;
   position: absolute;
