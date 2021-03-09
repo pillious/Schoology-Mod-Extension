@@ -1308,8 +1308,6 @@ body:not([data-st-theme="light"]) ._pendo-launcher_ ._pendo-section-content-body
   left: 8px;
   cursor: pointer;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .st-overlay:hover .st-logo-alert-wrapper {
