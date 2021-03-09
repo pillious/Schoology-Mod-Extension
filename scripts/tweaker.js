@@ -3,6 +3,7 @@ var overdue = document.querySelector("#overdue-submissions");
 
 window.onload = async function () {
     themeManager();
+    displaySTLogo();
 
     // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
@@ -222,4 +223,25 @@ function saveCollapseState(name, isCollapsed) {
 
 function getCollapseStates() {
     return JSON.parse(localStorage.getItem("st-collapse"));
+}
+
+function displaySTLogo() {
+    let overlay = document.createElement("div");
+    overlay.className = "st-overlay";
+
+    let logo = document.createElement("img");
+    logo.src= chrome.runtime.getURL("images/icon32.png");
+    logo.className="st-logo";
+
+    let alertWrapper = document.createElement("div");
+    alertWrapper.className = "st-logo-alert-wrapper";
+
+    let alert = document.createElement("div");
+    alert.className = "st-logo-alert";
+    alert.innerHTML = "You are running Schoology Tweaker!"; 
+
+    alertWrapper.append(alert);
+    overlay.append(logo);
+    overlay.append(alertWrapper);
+    document.body.append(overlay);
 }

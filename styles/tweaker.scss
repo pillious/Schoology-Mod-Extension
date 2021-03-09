@@ -1,4 +1,4 @@
-// Dark mode styles
+// DARK MODE STYLES
 // Login
 // Messages
 // Base styles
@@ -19,10 +19,11 @@
 // Popups
 // Submission textboxes
 // Schoology Helper
-
-// Universal styles
+// ----------------
+// UNIVERSAL STYLES
 // Sidebar tweak
 // Assignment checkboxes
+// Logo overlay
 
 $E0: #121212;
 $E1: #1d1d1d;
@@ -104,6 +105,7 @@ html:not([data-st-theme="light"]) {
             background-color: #3875D7 !important;
         }
     }
+
     // End Login 
 
     // Messages
@@ -127,6 +129,7 @@ html:not([data-st-theme="light"]) {
             }
         }
     }
+
     // End Messages
 
     // Base styles
@@ -381,16 +384,14 @@ body:not([data-st-theme="light"]) {
         #right-column-inner {
             #overdue-submissions {
                 background-color: $E1 !important;
-                position: relative;
             }
 
             .upcoming-events {
                 background-color: $E1 !important;
-                position: relative;
             }
 
             h3 {
-                padding-left: 20px;
+                padding-left: 20px !important;
             }
         }
     }
@@ -1527,6 +1528,18 @@ body:not([data-st-theme="light"]) {
 #right-column-inner {
     display: flex;
     flex-direction: column-reverse;
+
+    #overdue-submissions {
+        position: relative !important;
+    }
+
+    .upcoming-events {
+        position: relative !important;
+    }
+
+    h3 {
+        padding-left: 20px !important;
+    }
 }
 
 .st-icon-collapse {
@@ -1540,4 +1553,54 @@ body:not([data-st-theme="light"]) {
 .st-assignments-collapsed {
     display: none !important;
 }
+
 // End Sidebar tweak
+
+// Logo overlay
+.st-overlay {
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 68px;
+    left: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+    &:hover .st-logo-alert-wrapper {
+        width: 272px;
+        transition: all 0.2s ease;
+
+        & .st-logo-alert {
+            opacity: 1;
+            font-size: 14px;
+            transition: all 0.2s 0.2s ease;
+            
+        }
+    }
+
+    .st-logo-alert-wrapper {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 38px;
+        width: 0px;
+        height: 32px;
+        transition: all 0.2s 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #d4edda;
+        border-radius: 4px;
+
+        .st-logo-alert {
+            color: #155724 !important;
+            font-size: 0px;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+    }
+}
+// End Logo overlay

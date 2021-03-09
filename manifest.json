@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Schoology Tweaker",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Development",
   "browser_action": {
     "default_icon": {
@@ -53,7 +53,8 @@
     "styles/FontAwesome/webfonts/fa-solid-900.woff",
     "styles/FontAwesome/webfonts/fa-solid-900.ttf",
     "styles/FontAwesome/webfonts/fa-solid-900.eot",
-    "styles/FontAwesome/webfonts/fa-solid-900.svg"
+    "styles/FontAwesome/webfonts/fa-solid-900.svg",
+    "images/icon32.png"
   ]
 
 }

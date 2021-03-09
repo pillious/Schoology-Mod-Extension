@@ -284,16 +284,14 @@ body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content
 
 body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed #right-column-inner #overdue-submissions {
   background-color: #1d1d1d !important;
-  position: relative;
 }
 
 body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed #right-column-inner .upcoming-events {
   background-color: #1d1d1d !important;
-  position: relative;
 }
 
 body:not([data-st-theme="light"]) #main-content-wrapper #center-wrapper #content-wrapper #right-column.sHome-processed #right-column-inner h3 {
-  padding-left: 20px;
+  padding-left: 20px !important;
 }
 
 body:not([data-st-theme="light"]) #sidebar-left #left-nav li.active-trail div a.active {
@@ -1276,6 +1274,18 @@ body:not([data-st-theme="light"]) ._pendo-launcher_ ._pendo-section-content-body
           flex-direction: column-reverse;
 }
 
+#right-column-inner #overdue-submissions {
+  position: relative !important;
+}
+
+#right-column-inner .upcoming-events {
+  position: relative !important;
+}
+
+#right-column-inner h3 {
+  padding-left: 20px !important;
+}
+
 .st-icon-collapse {
   position: absolute;
   top: 0;
@@ -1287,5 +1297,62 @@ body:not([data-st-theme="light"]) ._pendo-launcher_ ._pendo-section-content-body
 
 .st-assignments-collapsed {
   display: none !important;
+}
+
+.st-overlay {
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 68px;
+  left: 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.st-overlay:hover .st-logo-alert-wrapper {
+  width: 272px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.st-overlay:hover .st-logo-alert-wrapper .st-logo-alert {
+  opacity: 1;
+  font-size: 14px;
+  -webkit-transition: all 0.2s 0.2s ease;
+  transition: all 0.2s 0.2s ease;
+}
+
+.st-overlay .st-logo-alert-wrapper {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 38px;
+  width: 0px;
+  height: 32px;
+  -webkit-transition: all 0.2s 0.2s ease;
+  transition: all 0.2s 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #d4edda;
+  border-radius: 4px;
+}
+
+.st-overlay .st-logo-alert-wrapper .st-logo-alert {
+  color: #155724 !important;
+  font-size: 0px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 /*# sourceMappingURL=tweaker.css.map */
