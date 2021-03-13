@@ -8,36 +8,100 @@ window.onload = async function () {
     // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
         // start observing
-        observer.observe(document, {
+        // observer.observe(document, {
+        //     childList: true,
+        //     subtree: true
+        // });
+
+        upcomingObserver.observe(document, {
+            childList: true,
+            subtree: true
+        });
+        overdueObserver.observe(document, {
             childList: true,
             subtree: true
         });
     }
 }
 
-// wait for upcoming to populate before adding checkboxes
-var observer = new MutationObserver(function (mutations, me) {
+var upcomingObserver = new MutationObserver(function (mutations, me) {
+    console.log(upcoming);
+    console.log("run 1");
     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
     if (upcoming) {
-        createSidebarCollapse(upcoming, "upcoming");
-        createSidebarCollapse(overdue, "overdue");
-
-        let assignments = upcoming.querySelectorAll("a[href*=assignment]");
-        let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
-
-        if (assignments) {
-            if (document.body.classList.contains("is-home")) {
-                cleanLocalStorageAssignments(assignments, dueDates);
+        try {
+            createSidebarCollapse(upcoming, "upcoming");
+        }
+        catch(err) {
+            console.log(err);
+            return;
+        }
+        try {
+            let assignments = upcoming.querySelectorAll("a[href*=assignment]");
+            let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
+    
+            if (assignments) {
+                if (document.body.classList.contains("is-home")) {
+                    cleanLocalStorageAssignments(assignments, dueDates);
+                }
+                appendCheckboxes(assignments, dueDates);
             }
-            appendCheckboxes(assignments, dueDates);
             me.disconnect();
             return;
         }
+        catch(err) {
+            console.log(err);
+            return;
+        }
     } else {
-        me.disconnect();
+        // me.disconnect();
         return;
     }
 
+    // if (upcoming) {
+    //     try {
+    //         createSidebarCollapse(upcoming, "upcoming");
+
+    //         let assignments = upcoming.querySelectorAll("a[href*=assignment]");
+    //         let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
+    
+    //         if (assignments) {
+    //             if (document.body.classList.contains("is-home")) {
+    //                 cleanLocalStorageAssignments(assignments, dueDates);
+    //             }
+    //             appendCheckboxes(assignments, dueDates);
+    //             me.disconnect();
+    //             return;
+    //         }
+    //     }
+    //     catch(err) {
+    //         console.log(err);
+    //         return;
+    //     }
+    // } else {
+    //     // me.disconnect();
+    //     return;
+    // }
+});
+
+var overdueObserver = new MutationObserver(function (mutations, me) {
+    // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
+    console.log(overdue);
+    console.log("run 2");
+    if (overdue) {
+        try {
+            createSidebarCollapse(overdue, "overdue");
+            me.disconnect();
+            return;
+        }
+        catch(err) {
+            console.log(err);
+            return;
+        }
+    } else {
+        // me.disconnect();
+        return;
+    }
 });
 
 function appendCheckboxes(assignments, dueDates) {
@@ -133,13 +197,12 @@ async function themeManager() {
     setTheme(await getTheme());
 
     try {
-        chrome.storage.onChanged.addListener(async function(changes, area) {
-            if (area === "sync" || area  === "local" && "st-theme" in changes) {
+        chrome.storage.onChanged.addListener(async function (changes, area) {
+            if (area === "sync" || area === "local" && "st-theme" in changes) {
                 setTheme(changes["st-theme"].newValue);
             }
         });
-    }
-    catch(err) {
+    } catch (err) {
         console.log(err);
     }
 
@@ -148,17 +211,15 @@ async function themeManager() {
 async function getTheme() {
     try {
         return new Promise((resolve, reject) => {
-            chrome.storage.sync.get(["st-theme"], function(result) {
+            chrome.storage.sync.get(["st-theme"], function (result) {
                 if (result["st-theme"]) {
                     resolve(result["st-theme"]);
-                }
-                else {
+                } else {
                     resolve("dark");
                 }
             });
         });
-    }
-    catch(err) {
+    } catch (err) {
         console.log(err);
     }
 
@@ -181,19 +242,17 @@ function createSidebarCollapse(elem, name) {
 
             let assignmentList = elem.querySelector(".upcoming-list");
             assignmentList.classList.toggle("st-assignments-collapsed");
-        }
-        else {
+        } else {
             icon.className = "fas fa-chevron-down st-icon-collapse";
             icon.setAttribute("data-is-collapsed", false);
         }
-    }
-    else {
+    } else {
         icon.className = "fas fa-chevron-down st-icon-collapse";
         icon.setAttribute("data-is-collapsed", false);
     }
-    
-    icon.addEventListener("click", function() {
-        handleCollapseToggle(this, name);   
+
+    icon.addEventListener("click", function () {
+        handleCollapseToggle(this, name);
     });
 
     elem.insertBefore(icon, elem.firstChild);
@@ -214,7 +273,12 @@ function saveCollapseState(name, isCollapsed) {
     let states = getCollapseStates();
 
     if (!states) {
-        states = {data: {upcoming: false, overdue: false}};
+        states = {
+            data: {
+                upcoming: false,
+                overdue: false
+            }
+        };
     }
 
     states.data[name] = isCollapsed;
@@ -230,15 +294,15 @@ function displaySTLogo() {
     overlay.className = "st-overlay";
 
     let logo = document.createElement("img");
-    logo.src= chrome.runtime.getURL("images/icon32.png");
-    logo.className="st-logo";
+    logo.src = chrome.runtime.getURL("images/icon32.png");
+    logo.className = "st-logo";
 
     let alertWrapper = document.createElement("div");
     alertWrapper.className = "st-logo-alert-wrapper";
 
     let alert = document.createElement("div");
     alert.className = "st-logo-alert";
-    alert.innerHTML = "You are running Schoology Tweaker!"; 
+    alert.innerHTML = "You are running Schoology Tweaker!";
 
     alertWrapper.append(alert);
     overlay.append(logo);

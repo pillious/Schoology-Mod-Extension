@@ -946,20 +946,30 @@ body:not([data-st-theme="light"]) {
     }
 
     // embedded google docs assignment
-    .profile-container-4015500229 {
+    div[class*="profile-container"] {
         background-color: $E1 !important;
 
-        .profile-header-2536997237 {
-            background-color: $E0 !important;
+        div[class*="profile-header"] {
+            background-color: $E1 !important;
 
-            .layout-row-inner-3835588998 {
+            div[class*="layout-row-inner"] {
                 background-color: $E1 !important;
             }
 
         }
 
-        .content-box-container-3232021855 {
+        div[class*="content-box-container"] {
             background-color: $E2 !important;
+
+            div[class*="rubric-table-row-row"] {
+                background-color: $E2 !important;
+            }
+        }
+
+        div[class*="document-header-module-headerContent"] {
+            button span {
+                color: #0677BA !important;
+            }
         }
     }
 
@@ -1384,6 +1394,28 @@ body:not([data-st-theme="light"]) {
         background-color: $E2 !important;
     }
 
+
+    .ReactModalPortal {
+        .ReactModal__Content {
+            background-color: $E5 !important;
+
+            div[data-sgy-component="modal-content"] {
+                button[data-sgy-component="secondary-button"] {
+                    span {
+                        color: #0677BA !important;
+                        ;
+                    }
+                }
+            }
+        }
+    }
+
+    #popups-loading {
+        div {
+            background-color: $E5 !important;
+        }
+    }
+
     // End Popups
 
     // Submission textboxes
@@ -1575,7 +1607,7 @@ body:not([data-st-theme="light"]) {
             opacity: 1;
             font-size: 14px;
             transition: all 0.2s 0.2s ease;
-            
+
         }
     }
 
@@ -1602,4 +1634,5 @@ body:not([data-st-theme="light"]) {
         }
     }
 }
+
 // End Logo overlay
