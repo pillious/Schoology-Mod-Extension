@@ -8,48 +8,54 @@ window.onload = async function () {
     // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
         // start observing
-        // observer.observe(document, {
-        //     childList: true,
-        //     subtree: true
-        // });
-
+        console.log("hello")
         upcomingObserver.observe(document, {
+            attributes: true,
+            characterData: true,
             childList: true,
-            subtree: true
+            subtree: true,
+            attributeOldValue: true,
+            characterDataOldValue: true
         });
         overdueObserver.observe(document, {
+            attributes: true,
+            characterData: true,
             childList: true,
-            subtree: true
+            subtree: true,
+            attributeOldValue: true,
+            characterDataOldValue: true
         });
     }
 }
 
 var upcomingObserver = new MutationObserver(function (mutations, me) {
+    console.log(mutations);
     console.log(upcoming);
     console.log("run 1");
     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
     if (upcoming) {
         try {
             createSidebarCollapse(upcoming, "upcoming");
-        }
-        catch(err) {
+        } catch (err) {
             console.log(err);
             return;
         }
         try {
             let assignments = upcoming.querySelectorAll("a[href*=assignment]");
             let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
-    
+
             if (assignments) {
                 if (document.body.classList.contains("is-home")) {
                     cleanLocalStorageAssignments(assignments, dueDates);
                 }
                 appendCheckboxes(assignments, dueDates);
             }
-            me.disconnect();
+
+            if (upcoming.querySelector(".st-icon-collapse")) {
+                me.disconnect();
+            }
             return;
-        }
-        catch(err) {
+        } catch (err) {
             console.log(err);
             return;
         }
@@ -64,7 +70,7 @@ var upcomingObserver = new MutationObserver(function (mutations, me) {
 
     //         let assignments = upcoming.querySelectorAll("a[href*=assignment]");
     //         let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
-    
+
     //         if (assignments) {
     //             if (document.body.classList.contains("is-home")) {
     //                 cleanLocalStorageAssignments(assignments, dueDates);
@@ -86,15 +92,18 @@ var upcomingObserver = new MutationObserver(function (mutations, me) {
 
 var overdueObserver = new MutationObserver(function (mutations, me) {
     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
+    console.log(mutations);
     console.log(overdue);
     console.log("run 2");
     if (overdue) {
         try {
             createSidebarCollapse(overdue, "overdue");
-            me.disconnect();
+
+            if (overdue.querySelector(".st-icon-collapse")) {
+                me.disconnect();
+            }
             return;
-        }
-        catch(err) {
+        } catch (err) {
             console.log(err);
             return;
         }
