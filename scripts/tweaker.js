@@ -12,11 +12,6 @@ window.onload = async function () {
         upcomingSuccess = false;
         overdueSuccess = false;
 
-        // observer.observe(document, {
-        //     childList: true,
-        //     subtree: true,
-        // });
-
         // start observing
         upcomingObserver.observe(upcoming, {
             childList: true,
@@ -28,20 +23,6 @@ window.onload = async function () {
         });
     }
 }
-
-// var observer = new MutationObserver(function (mutations, me) {
-//     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
-//     console.log(mutations);
-//     console.log("run");
-
-//     upcomingHandler();
-//     overdueHandler();
-
-//     if (upcomingSuccess && overdueSuccess) {
-//         console.log(upcomingSuccess + ", " + overdueSuccess);
-//         me.disconnect();
-//     }
-// });
 
 var upcomingObserver = new ResizeObserver(async function (mutations, me) {
     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
@@ -57,7 +38,7 @@ var upcomingObserver = new ResizeObserver(async function (mutations, me) {
 
     if (!upcomingSuccess) {
         for (var i = 0; i < 5; i++) {
-            console.log("upcoming wait()");
+            console.log("upcoming wait()  - " + i);
             await wait(500);
             upcomingHandler();
 
