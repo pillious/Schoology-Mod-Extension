@@ -1,5 +1,7 @@
 var upcoming = document.querySelector(".upcoming-events");
 var overdue = document.querySelector("#overdue-submissions");
+var upcomingSuccess = false; 
+var overdueSuccess = false;
 
 window.onload = async function () {
     themeManager();
@@ -7,32 +9,87 @@ window.onload = async function () {
 
     // TODO: Add checkboxes to course homepages  (s-course-materials-has-add-content)
     if (document.body.classList.contains("is-home")) {
+        upcomingSuccess = false;
+        overdueSuccess = false;
+
+        // observer.observe(document, {
+        //     childList: true,
+        //     subtree: true,
+        // });
+
         // start observing
-        console.log("hello")
-        upcomingObserver.observe(document, {
-            attributes: true,
-            characterData: true,
+        upcomingObserver.observe(upcoming, {
             childList: true,
             subtree: true,
-            attributeOldValue: true,
-            characterDataOldValue: true
         });
-        overdueObserver.observe(document, {
-            attributes: true,
-            characterData: true,
+        overdueObserver.observe(overdue, {
             childList: true,
             subtree: true,
-            attributeOldValue: true,
-            characterDataOldValue: true
         });
     }
 }
 
-var upcomingObserver = new MutationObserver(function (mutations, me) {
+// var observer = new MutationObserver(function (mutations, me) {
+//     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
+//     console.log(mutations);
+//     console.log("run");
+
+//     upcomingHandler();
+//     overdueHandler();
+
+//     if (upcomingSuccess && overdueSuccess) {
+//         console.log(upcomingSuccess + ", " + overdueSuccess);
+//         me.disconnect();
+//     }
+// });
+
+var upcomingObserver = new ResizeObserver(async function (mutations, me) {
+    // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
     console.log(mutations);
     console.log(upcoming);
-    console.log("run 1");
+    // console.log("run 1");
+
+    upcomingHandler();
+    me.disconnect();
+
+    console.log("upcoming: " + upcomingSuccess);
+    console.log(upcoming.querySelector(".st-icon-collapse"));
+
+    if (!upcomingSuccess) {
+        for (var i = 0; i < 5; i++) {
+            console.log("upcoming wait()");
+            await wait(500);
+            upcomingHandler();
+
+            if (upcomingSuccess) break;
+        }
+
+    }
+});
+
+var overdueObserver = new ResizeObserver(async function (mutations, me) {
     // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
+    // console.log(mutations);
+    // console.log(overdue);
+    // console.log("run 2");
+
+    overdueHandler();
+    me.disconnect();
+
+    // console.log("overdue: " + overdueSuccess);
+
+    if (!overdueSuccess) {
+        for (var i = 0; i < 5; i++) {
+            console.log("overdue wait() - " + i);
+            await wait(500);
+            overdueHandler();
+
+            if (overdueSuccess) break;
+        }
+    }
+});
+
+function upcomingHandler() {
     if (upcoming) {
         try {
             createSidebarCollapse(upcoming, "upcoming");
@@ -51,8 +108,8 @@ var upcomingObserver = new MutationObserver(function (mutations, me) {
                 appendCheckboxes(assignments, dueDates);
             }
 
-            if (upcoming.querySelector(".st-icon-collapse")) {
-                me.disconnect();
+            if (upcoming.querySelector(".st-icon-collapse") && upcoming.querySelector(".st-checkbox")) {
+                upcomingSuccess = true;
             }
             return;
         } catch (err) {
@@ -60,47 +117,17 @@ var upcomingObserver = new MutationObserver(function (mutations, me) {
             return;
         }
     } else {
-        // me.disconnect();
         return;
     }
+}
 
-    // if (upcoming) {
-    //     try {
-    //         createSidebarCollapse(upcoming, "upcoming");
-
-    //         let assignments = upcoming.querySelectorAll("a[href*=assignment]");
-    //         let dueDates = Array.from(upcoming.querySelectorAll(".upcoming-event")).map(elem => elem.dataset.start);
-
-    //         if (assignments) {
-    //             if (document.body.classList.contains("is-home")) {
-    //                 cleanLocalStorageAssignments(assignments, dueDates);
-    //             }
-    //             appendCheckboxes(assignments, dueDates);
-    //             me.disconnect();
-    //             return;
-    //         }
-    //     }
-    //     catch(err) {
-    //         console.log(err);
-    //         return;
-    //     }
-    // } else {
-    //     // me.disconnect();
-    //     return;
-    // }
-});
-
-var overdueObserver = new MutationObserver(function (mutations, me) {
-    // `mutations` is an array of mutations that occurred, `me` is the MutationObserver instance
-    console.log(mutations);
-    console.log(overdue);
-    console.log("run 2");
+function overdueHandler() {
     if (overdue) {
         try {
             createSidebarCollapse(overdue, "overdue");
 
             if (overdue.querySelector(".st-icon-collapse")) {
-                me.disconnect();
+                overdueSuccess = true;
             }
             return;
         } catch (err) {
@@ -108,10 +135,15 @@ var overdueObserver = new MutationObserver(function (mutations, me) {
             return;
         }
     } else {
-        // me.disconnect();
         return;
     }
-});
+}
+
+async function wait(ms) {
+    return new Promise(resolve => {
+      setTimeout(resolve, ms);
+    });
+}
 
 function appendCheckboxes(assignments, dueDates) {
     var stored = getStoredAssignments();

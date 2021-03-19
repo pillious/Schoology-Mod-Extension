@@ -857,6 +857,12 @@ body:not([data-st-theme="light"]) {
                 border-color: $text-disabled !important;
             }
 
+            .info-container {
+                div, span {
+                    background-color: $E2 !important;
+                }
+            }
+
             table,
             thead,
             tr,
@@ -975,6 +981,24 @@ body:not([data-st-theme="light"]) {
 
     // assessments
     .assessment-delivery-landing-app {
+        main {
+            div[data-reactid=".0.0.0.3.1"],
+            div[data-reactid=".0.0.0.3.2.0"] {
+                background: none !important;
+                background-color: $E1 !important;
+            }
+
+            article article {
+                background-color: $E2 !important;
+
+                .lrn_response {
+                    .lrn_selected {
+                        background-color: $secondary !important;
+                    }
+                }
+            }
+        }
+
         div.full-height {
             background-color: $E5 !important;
         }
@@ -1014,7 +1038,7 @@ body:not([data-st-theme="light"]) {
                 }
             }
 
-            .lrn-fileupload-upload-container {
+            .lrn-fileupload-container {
                 background-color: $E2 !important;
 
                 .lrn-fileupload-notifications-outlet {
@@ -1264,6 +1288,12 @@ body:not([data-st-theme="light"]) {
             .term-item-tag {
                 background: none !important;
             }
+        }
+    }
+
+    .rubric-table {
+        thead tr td{
+            background-color: $E1 !important;
         }
     }
 

@@ -676,6 +676,10 @@ body:not([data-st-theme="light"]) #main #main-inner .assignment-details {
   border-color: rgba(255, 255, 255, 0.38) !important;
 }
 
+body:not([data-st-theme="light"]) #main #main-inner .info-container div, body:not([data-st-theme="light"]) #main #main-inner .info-container span {
+  background-color: #212121 !important;
+}
+
 body:not([data-st-theme="light"]) #main #main-inner table,
 body:not([data-st-theme="light"]) #main #main-inner thead,
 body:not([data-st-theme="light"]) #main #main-inner tr,
@@ -769,6 +773,20 @@ body:not([data-st-theme="light"]) div[class*="profile-container"] div[class*="do
   color: #0677BA !important;
 }
 
+body:not([data-st-theme="light"]) .assessment-delivery-landing-app main div[data-reactid=".0.0.0.3.1"],
+body:not([data-st-theme="light"]) .assessment-delivery-landing-app main div[data-reactid=".0.0.0.3.2.0"] {
+  background: none !important;
+  background-color: #1d1d1d !important;
+}
+
+body:not([data-st-theme="light"]) .assessment-delivery-landing-app main article article {
+  background-color: #212121 !important;
+}
+
+body:not([data-st-theme="light"]) .assessment-delivery-landing-app main article article .lrn_response .lrn_selected {
+  background-color: #1D8487 !important;
+}
+
 body:not([data-st-theme="light"]) .assessment-delivery-landing-app div.full-height {
   background-color: #2c2c2c !important;
 }
@@ -809,11 +827,11 @@ body:not([data-st-theme="light"]) .ca-assessment-delivery-take-assessment .lrn .
   background-color: #373737 !important;
 }
 
-body:not([data-st-theme="light"]) .ca-assessment-delivery-take-assessment .lrn .lrn-fileupload-upload-container {
+body:not([data-st-theme="light"]) .ca-assessment-delivery-take-assessment .lrn .lrn-fileupload-container {
   background-color: #212121 !important;
 }
 
-body:not([data-st-theme="light"]) .ca-assessment-delivery-take-assessment .lrn .lrn-fileupload-upload-container .lrn-fileupload-notifications-outlet .lrn-notifications-bar {
+body:not([data-st-theme="light"]) .ca-assessment-delivery-take-assessment .lrn .lrn-fileupload-container .lrn-fileupload-notifications-outlet .lrn-notifications-bar {
   color: #1D8487 !important;
 }
 
@@ -1019,6 +1037,10 @@ body:not([data-st-theme="light"]) #s-assessment-view-submission-form .selected s
 
 body:not([data-st-theme="light"]) .cc-tags .param-val .term-item-tags .term-item-tag {
   background: none !important;
+}
+
+body:not([data-st-theme="light"]) .rubric-table thead tr td {
+  background-color: #1d1d1d !important;
 }
 
 body:not([data-st-theme="light"]) .popups-box .popups-title {
